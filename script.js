@@ -338,6 +338,7 @@ const questions = [
     }
 ];
 
+let selectedQuestions = []; // Déclarez selectedQuestions ici
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
