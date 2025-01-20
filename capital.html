@@ -354,16 +354,18 @@
         }
 
         function showQuiz(quiz) {
-            document.getElementById('quizA').style.display = 'none';
-            document.getElementById('quizB').style.display = 'none';
-            document.getElementById('quizC').style.display = 'none';
-            document.getElementById(`quiz${quiz}`).style.display = 'block';
-            
-            const state = quizStates[quiz];
-            state.currentQuestion = 0;
-            state.score = 0;
-            document.getElementById(`score${quiz}`).textContent = 0;
-            displayQuestion(quiz);
+    document.getElementById('quizA').style.display = 'none';
+    document.getElementById('quizB').style.display = 'none';
+    document.getElementById('quizC').style.display = 'none';
+    document.getElementById('quizD').style.display = 'none';
+    document.getElementById('quizE').style.display = 'block'; // Ajoutez cette ligne
+
+    const state = quizStates[quiz];
+    state.currentQuestion = 0;
+    state.score = 0;
+    document.getElementById(`score${quiz}`).textContent = 0;
+    displayQuestion(quiz);
+}
         }
     </script>
 </body>
