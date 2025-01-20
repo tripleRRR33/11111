@@ -199,11 +199,10 @@ function showResult() {
 
 function initQuiz() {
     shuffleArray(questions);
-    questions = questions.slice(0, 10); // Sélectionner seulement 10 questions
     currentQuestionIndex = 0;
     score = 0;
     scoreSpan.textContent = score;
-    totalSpan.textContent = questions.length;
+    totalSpan.textContent = 10; // Fixer à 10 pour refléter le nombre de questions
     showQuestion();
 }
 
