@@ -338,7 +338,7 @@ const questions = [
     }
 ];
 
-let selectedQuestions = []; // Déclarez selectedQuestions ici
+let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
@@ -350,7 +350,8 @@ const scoreSpan = document.getElementById('score');
 const totalSpan = document.getElementById('total');
 const timeSpan = document.getElementById('time');
 const finalScoreSpan = document.getElementById('final-score');
-const questionCounterSpan = document.getElementById('question-counter'); // Ajoutez cette ligne
+const questionCounterSpan = document.getElementById('question-counter');
+const startQuizButton = document.getElementById('start-quiz'); // Ajoutez cette ligne
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -378,12 +379,12 @@ function updateTimer() {
 }
 
 function showQuestion() {
-    if (currentQuestionIndex >= selectedQuestions.length) { // Utilisez selectedQuestions
+    if (currentQuestionIndex >= selectedQuestions.length) {
         showResult();
         return;
     }
 
-    const question = selectedQuestions[currentQuestionIndex]; // Utilisez selectedQuestions
+    const question = selectedQuestions[currentQuestionIndex];
     quizContainer.innerHTML = `
         <div class="quiz-card">
             <div class="question">${question.question}</div>
@@ -396,20 +397,18 @@ function showQuestion() {
         </div>
     `;
 
-    questionCounterSpan.textContent = `Question ${currentQuestionIndex + 1}/10`; // Mettez à jour le compteur de questions
+    questionCounterSpan.textContent = `Question ${currentQuestionIndex + 1}/10`;
     startTimer();
 }
 
 function handleAnswer(selectedIndex) {
     clearInterval(timer);
-    const question = selectedQuestions[currentQuestionIndex]; // Utilisez selectedQuestions
+    const question = selectedQuestions[currentQuestionIndex];
     const options = document.querySelectorAll('.option');
     const anecdote = document.querySelector('.anecdote');
 
-    // Afficher la bonne réponse
     options[question.correct].classList.add('correct');
 
-    // Si une réponse a été sélectionnée
     if (selectedIndex >= 0) {
         options[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'wrong');
         if (selectedIndex === question.correct) {
@@ -418,10 +417,8 @@ function handleAnswer(selectedIndex) {
         }
     }
 
-    // Afficher l'anecdote
     anecdote.style.display = 'block';
 
-    // Passer à la question suivante après un délai
     setTimeout(() => {
         currentQuestionIndex++;
         showQuestion();
@@ -432,18 +429,21 @@ function showResult() {
     quizContainer.style.display = 'none';
     resultDiv.style.display = 'block';
     document.querySelector('.timer').style.display = 'none';
-    finalScoreSpan.textContent = Math.round((score / 10) * 100); // Divisez par 10 car il y a 10 questions
+    finalScoreSpan.textContent = Math.round((score / 10) * 100);
 }
 
 function initQuiz() {
     shuffleArray(questions);
-    selectedQuestions = questions.slice(0, 10); // Sélectionner seulement 10 questions et les stocker dans selectedQuestions
+    selectedQuestions = questions.slice(0, 10);
     currentQuestionIndex = 0;
     score = 0;
     scoreSpan.textContent = score;
-    totalSpan.textContent = 10; // Fixer à 10 pour refléter le nombre de questions
+    totalSpan.textContent = 10;
     showQuestion();
 }
 
-// Démarrer le quiz
-initQuiz();
+// Ajoutez un gestionnaire d'événements pour le bouton de démarrage du quiz
+startQuizButton.addEventListener('click', () => {
+    startQuizButton.style.display = 'none'; // Masquer le bouton de démarrage
+    initQuiz(); // Initialiser le quiz
+});
