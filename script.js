@@ -5,7 +5,6 @@ const questions = [
         correct: 1,
         anecdote: "Les prix Nobel ont été créés à la suite du testament d'Alfred Nobel, l'inventeur de la dynamite."
     },
-    [
     {
         "question": "Quelle famille détient le record du nombre de prix Nobel reçus ?",
         "options": ["La famille Einstein", "La famille Curie", "La famille Nobel", "La famille Fleming"],
