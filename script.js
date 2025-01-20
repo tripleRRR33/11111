@@ -351,7 +351,7 @@ const totalSpan = document.getElementById('total');
 const timeSpan = document.getElementById('time');
 const finalScoreSpan = document.getElementById('final-score');
 const questionCounterSpan = document.getElementById('question-counter');
-const startQuizButton = document.getElementById('start-quiz'); // Ajoutez cette ligne
+const startQuizButton = document.getElementById('start-quiz'); // Bouton de démarrage
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
