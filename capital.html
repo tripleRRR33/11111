@@ -123,7 +123,7 @@
         #quizA, #quizB, #quizC {
             display: none;
         }
-    </style>
+    <</style>
 </head>
 <body>
     <div class="selector">
@@ -354,18 +354,17 @@
         }
 
         function showQuiz(quiz) {
-    document.getElementById('quizA').style.display = 'none';
-    document.getElementById('quizB').style.display = 'none';
-    document.getElementById('quizC').style.display = 'none';
-    document.getElementById('quizD').style.display = 'none';
-    document.getElementById('quizE').style.display = 'block'; // Ajoutez cette ligne
+            document.getElementById('quizA').style.display = 'none';
+            document.getElementById('quizB').style.display = 'none';
+            document.getElementById('quizC').style.display = 'none';
+            document.getElementById('quizD').style.display = 'none';
+            document.getElementById('quizE').style.display = 'block'; // Assurez-vous que cette ligne est présente
 
-    const state = quizStates[quiz];
-    state.currentQuestion = 0;
-    state.score = 0;
-    document.getElementById(`score${quiz}`).textContent = 0;
-    displayQuestion(quiz);
-}
+            const state = quizStates[quiz];
+            state.currentQuestion = 0;
+            state.score = 0;
+            document.getElementById(`score${quiz}`).textContent = 0;
+            displayQuestion(quiz);
         }
     </script>
 </body>
