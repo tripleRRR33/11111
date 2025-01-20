@@ -177,6 +177,20 @@
             </div>
         </div>
     </div>
+    <div id="quizD" class="quiz-section">
+        <div class="quiz-container quiz-d">
+            <h1>Quiz des Capitales - Pays en D</h1>
+            <div class="question">
+                <h2 class="question-text" id="questionTextD"></h2>
+                <div class="options" id="optionsD"></div>
+            </div>
+            <div class="progress">Question <span id="currentQuestionD">1</span>/<span id="totalQuestionsD"></span></div>
+            <div class="score">Score: <span id="scoreD">0</span></div>
+            <div class="controls">
+                <button onclick="nextQuestion('D')">Question suivante</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Données des quiz A et B identiques à avant
@@ -235,11 +249,18 @@
             { pays: "Croatie", capitale: "Zagreb" },
             { pays: "Cuba", capitale: "La Havane" }
         ];
+         const capitalesD = [
+            { pays: "Danemark", capitale: "Copenhague" },
+            { pays: "Djibouti", capitale: "Djibouti" },
+            { pays: "Dominique", capitale: "Roseau" }
+        ];
+
 
         const quizStates = {
             A: { currentQuestion: 0, score: 0, capitales: capitalesA },
             B: { currentQuestion: 0, score: 0, capitales: capitalesB },
-            C: { currentQuestion: 0, score: 0, capitales: capitalesC }
+            C: { currentQuestion: 0, score: 0, capitales: capitalesC },
+            D: { currentQuestion: 0, score: 0, capitales: capitalesD }
         };
 
         function shuffleArray(array) {
