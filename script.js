@@ -5,6 +5,109 @@ const questions = [
         correct: 1,
         anecdote: "Les prix Nobel ont été créés à la suite du testament d'Alfred Nobel, l'inventeur de la dynamite."
     },
+    [
+    {
+        "question": "Quelle famille détient le record du nombre de prix Nobel reçus ?",
+        "options": ["La famille Einstein", "La famille Curie", "La famille Nobel", "La famille Fleming"],
+        "correct": 1,
+        "anecdote": "Marie, Pierre, et leur fille Irène ont reçu un total de cinq prix Nobel."
+    },
+    {
+        "question": "Quel auteur chilien a reçu le prix Nobel de littérature en 1971 ?",
+        "options": ["Gabriela Mistral", "Isabel Allende", "Pablo Neruda", "Roberto Bolaño"],
+        "correct": 2,
+        "anecdote": "Son œuvre poétique célèbre l’amour, la nature et la lutte politique."
+    },
+    {
+        "question": "Combien de fois le prix Nobel de la paix a-t-il été attribué à une organisation ?",
+        "options": ["Plus de 10 fois", "Plus de 15 fois", "Plus de 20 fois", "Plus de 25 fois"],
+        "correct": 3,
+        "anecdote": "Des organisations comme la Croix-Rouge l'ont reçu plusieurs fois."
+    },
+    {
+        "question": "Quel prix Nobel a été décerné pour la découverte de la pénicilline ?",
+        "options": ["Médecine", "Physique", "Chimie", "Paix"],
+        "correct": 0,
+        "anecdote": "Alexander Fleming a reçu ce prix en 1945 pour une découverte qui a sauvé des millions de vies."
+    },
+    {
+        "question": "Quel prix Nobel a été remis à un homme emprisonné en 1935 ?",
+        "options": ["Albert Schweitzer", "Carl von Ossietzky", "Léon Jouhaux", "Henri Dunant"],
+        "correct": 1,
+        "anecdote": "Carl von Ossietzky, critique du régime nazi, a reçu le prix Nobel de la paix en 1935."
+    },
+    {
+        "question": "Quel prix Nobel a été décerné à un Premier ministre britannique pendant la Seconde Guerre mondiale ?",
+        "options": ["Paix", "Physique", "Littérature", "Économie"],
+        "correct": 2,
+        "anecdote": "Winston Churchill a été récompensé en 1953 pour ses écrits historiques et son talent d'orateur."
+    },
+    {
+        "question": "Quel scientifique allemand a reçu le prix Nobel de physique en 1905 pour ses travaux sur la théorie des quanta ?",
+        "options": ["Albert Einstein", "Max Planck", "Philipp Lenard", "Werner Heisenberg"],
+        "correct": 2,
+        "anecdote": "Ses recherches ont influencé des théories clés, mais il a soutenu les idées nazies plus tard dans sa vie."
+    },
+    {
+        "question": "Quel célèbre humanitaire a reçu le prix Nobel de la paix en 1979 ?",
+        "options": ["Mère Teresa", "Malala Yousafzai", "Albert Schweitzer", "Henry Dunant"],
+        "correct": 0,
+        "anecdote": "Mère Teresa a utilisé la récompense pour aider les plus pauvres à Calcutta."
+    },
+    {
+        "question": "Quel lauréat a décliné sa récompense pour dénoncer les injustices de son pays ?",
+        "options": ["Liu Xiaobo", "Andrei Sakharov", "Boris Pasternak", "Jean-Paul Sartre"],
+        "correct": 0,
+        "anecdote": "Liu Xiaobo, prix Nobel de la paix en 2010, était emprisonné en Chine au moment de sa nomination."
+    },
+    {
+        "question": "En quelle année les prix Nobel n’ont-ils pas été décernés pour cause de guerre mondiale ?",
+        "options": ["1914-1918", "1939-1945", "Les deux guerres mondiales", "Jamais"],
+        "correct": 2,
+        "anecdote": "Certains prix ont été décernés rétroactivement après la guerre."
+    },
+    {
+        "question": "Quel prix Nobel a été annulé en 1948, bien qu'il y ait des candidats valables ?",
+        "options": ["Littérature", "Paix", "Physique", "Médecine"],
+        "correct": 1,
+        "anecdote": "Le comité a choisi de ne pas décerner le prix en hommage à Mahatma Gandhi, assassiné cette année-là."
+    },
+    {
+        "question": "Quel prix a été suspendu en 2018 à cause d’un scandale de harcèlement sexuel ?",
+        "options": ["Physique", "Littérature", "Paix", "Médecine"],
+        "correct": 1,
+        "anecdote": "Le prix a été reporté à 2019, où deux lauréats ont été annoncés."
+    },
+    {
+        "question": "Quel scientifique a été récompensé pour la découverte de l'ARN messager ?",
+        "options": ["Alexander Fleming", "Drew Weissman", "Katalin Karikó et Drew Weissman", "Frederick Banting"],
+        "correct": 2,
+        "anecdote": "Cette découverte a permis la création des vaccins à ARN contre le Covid-19."
+    },
+    {
+        "question": "Quel auteur afro-américain a reçu le prix Nobel de littérature en 1993 ?",
+        "options": ["Maya Angelou", "James Baldwin", "Toni Morrison", "Langston Hughes"],
+        "correct": 2,
+        "anecdote": "Elle est célèbre pour son roman *Beloved*, qui explore l'héritage de l'esclavage."
+    },
+    {
+        "question": "Quel prix Nobel est le seul à être décerné à Oslo, et non à Stockholm ?",
+        "options": ["Littérature", "Physique", "Paix", "Médecine"],
+        "correct": 2,
+        "anecdote": "Alfred Nobel a spécifiquement souhaité que ce prix soit géré en Norvège."
+    },
+    {
+        "question": "Quel prix Nobel récompense souvent des découvertes médicales fondamentales ?",
+        "options": ["Physique", "Paix", "Littérature", "Physiologie ou médecine"],
+        "correct": 3,
+        "anecdote": "Frederick Banting et John Macleod ont reçu ce prix en 1923 pour la découverte de l'insuline."
+    },
+    {
+        "question": "Quel personnage de fiction dans la série The Big Bang Theory rêve de recevoir un prix Nobel ?",
+        "options": ["Howard Wolowitz", "Leonard Hofstadter", "Rajesh Koothrappali", "Sheldon Cooper"],
+        "correct": 3,
+        "anecdote": "Dans la série, il remporte finalement le prix avec Amy Farrah Fowler."
+    },
     {
         "question": "Pourquoi le prix Nobel de la paix de 1973 est-il controversé ?",
         "options": [
@@ -274,12 +377,12 @@ function updateTimer() {
 }
 
 function showQuestion() {
-    if (currentQuestionIndex >= questions.length) {
+    if (currentQuestionIndex >= selectedQuestions.length) { // Utilisez selectedQuestions
         showResult();
         return;
     }
 
-    const question = questions[currentQuestionIndex];
+    const question = selectedQuestions[currentQuestionIndex]; // Utilisez selectedQuestions
     quizContainer.innerHTML = `
         <div class="quiz-card">
             <div class="question">${question.question}</div>
@@ -298,7 +401,7 @@ function showQuestion() {
 
 function handleAnswer(selectedIndex) {
     clearInterval(timer);
-    const question = questions[currentQuestionIndex];
+    const question = selectedQuestions[currentQuestionIndex]; // Utilisez selectedQuestions
     const options = document.querySelectorAll('.option');
     const anecdote = document.querySelector('.anecdote');
 
@@ -333,7 +436,7 @@ function showResult() {
 
 function initQuiz() {
     shuffleArray(questions);
-    questions = questions.slice(0, 10); // Sélectionner seulement 10 questions
+    selectedQuestions = questions.slice(0, 10); // Sélectionner seulement 10 questions et les stocker dans selectedQuestions
     currentQuestionIndex = 0;
     score = 0;
     scoreSpan.textContent = score;
