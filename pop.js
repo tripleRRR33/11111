@@ -5,7 +5,7 @@ const questions = [
     correct: 2,
     anecdote: "Bien qu’il ait été dépassé par Avatar en termes de recettes brutes, Autant en emporte le vent reste le plus rentable si l’on ajuste les recettes à l’inflation."
 },
-   {
+{
     "question": "Qui est le créateur de Superman ?",
     "options": ["Jerry Siegel et Joe Shuster", "Stan Lee et Steve Ditko", "Bob Kane et Bill Finger", "Jack Kirby et Joe Simon"],
     "correct": 0,
@@ -251,7 +251,117 @@ const questions = [
     correct: 2,
     anecdote: "Ce vaisseau emblématique, piloté par Han Solo et Chewbacca, est devenu un symbole de la saga Star Wars et est légendaire pour sa rapidité."
 },
+   [
+    {
+        "question": "Quel est le nom de l’application qui a révolutionné les vidéos courtes et a popularisé des mèmes ?",
+        "options": ["TikTok", "Instagram", "Vine", "Snapchat"],
+        "correct": 0,
+        "anecdote": "TikTok a popularisé les vidéos courtes, permettant aux utilisateurs de créer des contenus créatifs avec des chansons, des danseurs, des effets et des défis, devenant un phénomène culturel majeur."
+    },
+    {
+        "question": "Quelle marque de chaussures a collaboré avec Kanye West pour créer les Yeezy ?",
+        "options": ["Nike", "Adidas", "Puma", "Reebok"],
+        "correct": 1,
+        "anecdote": "Adidas a collaboré avec Kanye West pour créer la ligne de baskets Yeezy, qui est rapidement devenue un phénomène dans le monde de la mode et des baskets."
+    },
+    {
+        "question": "Quel designer est célèbre pour avoir inventé la petite robe noire ?",
+        "options": ["Coco Chanel", "Christian Dior", "Yves Saint Laurent", "Jean-Paul Gaultier"],
+        "correct": 0,
+        "anecdote": "Coco Chanel a révolutionné la mode féminine avec la création de la petite robe noire, un vêtement intemporel et élégant qui est devenu un essentiel dans la garde-robe de nombreuses femmes."
+    },
+    {
+        "question": "Quelle icône pop des années 2000 a lancé la tendance des jeans taille basse ?",
+        "options": ["Beyoncé", "Britney Spears", "Christina Aguilera", "Shakira"],
+        "correct": 1,
+        "anecdote": "Britney Spears, dans ses vidéos et apparitions publiques, a popularisé les jeans taille basse, qui sont devenus un élément clé de la mode féminine au début des années 2000."
+    },
+    {
+        "question": "Quelle entreprise est célèbre pour ses sacs à main de luxe souvent arborés par des célébrités comme Kim Kardashian ?",
+        "options": ["Gucci", "Louis Vuitton", "Chanel", "Prada"],
+        "correct": 1,
+        "anecdote": "Louis Vuitton est l’une des marques de luxe les plus emblématiques, célèbre pour ses sacs à main, ses valises et ses accessoires, devenus des symboles de statut dans la culture pop."
+    },
+    {
+        "question": "Quelle marque de vêtements streetwear a gagné en popularité grâce à sa collaboration avec Supreme ?",
+        "options": ["Nike", "Louis Vuitton", "Adidas", "Under Armour"],
+        "correct": 1,
+        "anecdote": "La collaboration entre Louis Vuitton et Supreme a mélangé le luxe et le streetwear, créant une nouvelle vague d'articles de mode qui étaient à la fois accessibles et exclusifs."
+    },
+    {
+        "question": "Quelle entreprise a lancé le premier smartphone iPhone ?",
+        "options": ["Apple", "Samsung", "Nokia", "BlackBerry"],
+        "correct": 0,
+        "anecdote": "L’iPhone, lancé en 2007 par Apple, a révolutionné l'industrie des smartphones avec son design innovant et son interface tactile, transformant ainsi l'ensemble du marché des technologies mobiles."
+    },
+    {
+        "question": "Quel réseau social a été fondé par Mark Zuckerberg en 2004 ?",
+        "options": ["Instagram", "Twitter", "Facebook", "Snapchat"],
+        "correct": 2,
+        "anecdote": "Facebook est devenu le plus grand réseau social au monde, permettant à des milliards d’utilisateurs de se connecter, de partager des informations et de créer des communautés en ligne."
+    },
+    {
+        "question": "Quelle entreprise a développé l'outil de recherche internet Google ?",
+        "options": ["Microsoft", "Yahoo", "Google Inc.", "Bing"],
+        "correct": 2,
+        "anecdote": "Google a été fondé par Larry Page et Sergey Brin en 1998 et est rapidement devenu le moteur de recherche le plus utilisé au monde, modifiant ainsi l'accès à l'information sur Internet."
+    },
+    {
+        "question": "Quel appareil de réalité virtuelle a été lancé par Facebook (maintenant Meta) sous le nom de Oculus ?",
+        "options": ["PlayStation VR", "Oculus Rift", "HTC Vive", "Valve Index"],
+        "correct": 1,
+        "anecdote": "Oculus Rift est un casque de réalité virtuelle qui permet une immersion totale dans les mondes virtuels, populaire dans les jeux vidéo et les applications immersives."
+    },
+    {
+        "question": "Quel est le nom de l'assistant vocal intelligent développé par Amazon ?",
+        "options": ["Siri", "Google Assistant", "Alexa", "Cortana"],
+        "correct": 2,
+        "anecdote": "Alexa, l’assistant virtuel d'Amazon, utilise la reconnaissance vocale pour répondre aux commandes et contrôler des appareils intelligents, facilitant l'interaction avec la technologie à domicile."
+    },
+    {
+        "question": "Qui est le créateur du personnage Mickey Mouse ?",
+        "options": ["Walt Disney", "Hanna-Barbera", "Tex Avery", "Max Fleischer"],
+        "correct": 0,
+        "anecdote": "Mickey Mouse est devenu l'une des figures les plus emblématiques de l'animation, symbole de l'empire Disney et de la culture populaire."
+    },
+    {
+        "question": "Quelle chanteuse a popularisé le style 'hipster' avec des lunettes rondes et un style rétro ?",
+        "options": ["Lana Del Rey", "Amy Winehouse", "Lady Gaga", "Taylor Swift"],
+        "correct": 0,
+        "anecdote": "Lana Del Rey a contribué à populariser un style vintage avec ses vidéos et ses morceaux empreints de nostalgie, influençant le courant rétro de la pop culture."
+    },
+    {
+        "question": "Quelle série télévisée a lancé la carrière de Jennifer Aniston ?",
+        "options": ["Friends", "The Office", "Parks and Recreation", "How I Met Your Mother"],
+        "correct": 0,
+        "anecdote": "Friends a propulsé Jennifer Aniston au sommet de la célébrité mondiale, grâce à son rôle de Rachel Green et ses performances comiques mémorables."
+    },
+    {
+        "question": "Quel artiste hip-hop a popularisé les tatouages faciaux et le style excentrique avec des teintes de cheveux colorées ?",
+        "options": ["Lil Uzi Vert", "Travis Scott", "Post Malone", "Kanye West"],
+        "correct": 2,
+        "anecdote": "Post Malone a contribué à l'évolution de la culture rap, combinant des éléments de rock, de hip-hop et de musique alternative dans son style unique."
+    },
+    {
+        "question": "Quelle série de télé-réalité a lancé les sœurs Kardashian sur le devant de la scène ?",
+        "options": ["The Kardashians", "Jersey Shore", "The Real Housewives of Beverly Hills", "Keeping Up with the Kardashians"],
+        "correct": 3,
+        "anecdote": "Cette série a documenté la vie des Kardashian-Jenner, transformant leur famille en une marque influente dans la mode, les affaires et les médias sociaux."
+    },
+    {
+        "question": "Quelle peinture de Pablo Picasso est considérée comme l'une des œuvres les plus importantes du Cubisme ?",
+        "options": ["Guernica", "Les Demoiselles d’Avignon", "Le Vieil Guitariste", "La Femme qui Pleure"],
+        "correct": 1,
+        "anecdote": "Cette œuvre emblématique, peinte en 1907, est l'une des premières œuvres de Picasso qui a défini le mouvement Cubiste, transformant l'art moderne du XXe siècle."
+    },
+    {
+        "question": "Quel graphiste a créé le logo du succès mondial Coca-Cola ?",
+        "options": ["Paul Rand", "Saul Bass", "Frank Mason Robinson", "Milton Glaser"],
+        "correct": 2,
+        "anecdote": "Frank Mason Robinson a écrit le nom de Coca-Cola en 1885, contribuant à l'identité visuelle intemporelle de la marque emblématique."
+    }
 ]
+
 
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
