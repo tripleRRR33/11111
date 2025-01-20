@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz des Capitales - A, B et C</title>
+    <style>
+        /* Mêmes styles que précédemment */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .quiz-section {
+            margin-bottom: 40px;
+        }
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .quiz-a { border-top: 5px solid #6c5ce7; }
+        .quiz-b { border-top: 5px solid #00b894; }
+        .quiz-c { border-top: 5px solid #e17055; }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background: #f8f9fa;
+        }
+        .question-text {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .options {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .option {
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            text-align: center;
+            background: white;
+        }
+        .option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #f8f9fa;
+        }
+        .option.correct {
+            background: #00b894;
+            color: white;
+            border-color: #00b894;
+        }
+        .option.incorrect {
+            background: #d63031;
+            color: white;
+            border-color: #d63031;
+        }
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            color: white;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 5px;
+        }
+        .quiz-a button { background: #6c5ce7; }
+        .quiz-b button { background: #00b894; }
+        .quiz-c button { background: #e17055; }
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .score {
+            text-align: center;
+            font-size: 1.4em;
+            margin-top: 20px;
+            color: #2d3436;
+            font-weight: bold;
+        }
+        .progress {
+            margin-top: 20px;
+            text-align: center;
+            color: #636e72;
+        }
+        .selector {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #quizA, #quizB, #quizC {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="selector">
+        <button onclick="showQuiz('A')" style="background: #6c5ce7;">Pays en A</button>
+        <button onclick="showQuiz('B')" style="background: #00b894;">Pays en B</button>
+        <button onclick="showQuiz('C')" style="background: #e17055;">Pays en C</button>
+    </div>
+
+    <!-- Sections des quiz A et B identiques à avant -->
+    <div id="quizA" class="quiz-section">
+        <!-- Même contenu que précédemment pour A -->
+        <div class="quiz-container quiz-a">
+            <h1>Quiz des Capitales - Pays en A</h1>
+            <div class="question">
+                <h2 class="question-text" id="questionTextA"></h2>
+                <div class="options" id="optionsA"></div>
+            </div>
+            <div class="progress">Question <span id="currentQuestionA">1</span>/<span id="totalQuestionsA"></span></div>
+            <div class="score">Score: <span id="scoreA">0</span></div>
+            <div class="controls">
+                <button onclick="nextQuestion('A')">Question suivante</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quizB" class="quiz-section">
+        <div class="quiz-container quiz-b">
+            <h1>Quiz des Capitales - Pays en B</h1>
+            <div class="question">
+                <h2 class="question-text" id="questionTextB"></h2>
+                <div class="options" id="optionsB"></div>
+            </div>
+            <div class="progress">Question <span id="currentQuestionB">1</span>/<span id="totalQuestionsB"></span></div>
+            <div class="score">Score: <span id="scoreB">0</span></div>
+            <div class="controls">
+                <button onclick="nextQuestion('B')">Question suivante</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nouvelle section pour le quiz C -->
+    <div id="quizC" class="quiz-section">
+        <div class="quiz-container quiz-c">
+            <h1>Quiz des Capitales - Pays en C</h1>
+            <div class="question">
+                <h2 class="question-text" id="questionTextC"></h2>
+                <div class="options" id="optionsC"></div>
+            </div>
+            <div class="progress">Question <span id="currentQuestionC">1</span>/<span id="totalQuestionsC"></span></div>
+            <div class="score">Score: <span id="scoreC">0</span></div>
+            <div class="controls">
+                <button onclick="nextQuestion('C')">Question suivante</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Données des quiz A et B identiques à avant
+        const capitalesA = [
+            { pays: "Afghanistan", capitale: "Kaboul" },
+            { pays: "Afrique du Sud", capitale: "Pretoria" },
+            { pays: "Albanie", capitale: "Tirana" },
+            { pays: "Algérie", capitale: "Alger" },
+            { pays: "Allemagne", capitale: "Berlin" },
+            { pays: "Andorre", capitale: "Andorre-la-Vieille" },
+            { pays: "Angola", capitale: "Luanda" },
+            { pays: "Antigua-et-Barbuda", capitale: "Saint John's" },
+            { pays: "Arabie Saoudite", capitale: "Riyad" },
+            { pays: "Argentine", capitale: "Buenos Aires" },
+            { pays: "Arménie", capitale: "Erevan" },
+            { pays: "Australie", capitale: "Canberra" },
+            { pays: "Autriche", capitale: "Vienne" },
+            { pays: "Azerbaïdjan", capitale: "Bakou" }
+        ];
+
+        const capitalesB = [
+            { pays: "Bahamas", capitale: "Nassau" },
+            { pays: "Bahreïn", capitale: "Manama" },
+            { pays: "Bangladesh", capitale: "Dacca" },
+            { pays: "Barbade", capitale: "Bridgetown" },
+            { pays: "Belgique", capitale: "Bruxelles" },
+            { pays: "Bélarus", capitale: "Minsk" },
+            { pays: "Belize", capitale: "Belmopan" },
+            { pays: "Bénin", capitale: "Porto-Novo" },
+            { pays: "Bhoutan", capitale: "Thimphou" },
+            { pays: "Bolivie", capitale: "Sucre" },
+            { pays: "Bosnie-Herzégovine", capitale: "Sarajevo" },
+            { pays: "Botswana", capitale: "Gaborone" },
+            { pays: "Brésil", capitale: "Brasília" },
+            { pays: "Brunei", capitale: "Bandar Seri Begawan" },
+            { pays: "Bulgarie", capitale: "Sofia" },
+            { pays: "Burkina Faso", capitale: "Ouagadougou" },
+            { pays: "Burundi", capitale: "Gitega" }
+        ];
+
+        // Nouvelles données pour les pays en C
+        const capitalesC = [
+            { pays: "Cambodge", capitale: "Phnom Penh" },
+            { pays: "Cameroun", capitale: "Yaoundé" },
+            { pays: "Canada", capitale: "Ottawa" },
+            { pays: "Cap-Vert", capitale: "Praia" },
+            { pays: "Chili", capitale: "Santiago" },
+            { pays: "Chine", capitale: "Pékin" },
+            { pays: "Chypre", capitale: "Nicosie" },
+            { pays: "Colombie", capitale: "Bogota" },
+            { pays: "Comores", capitale: "Moroni" },
+            { pays: "Congo", capitale: "Brazzaville" },
+            { pays: "Corée du Nord", capitale: "Pyongyang" },
+            { pays: "Corée du Sud", capitale: "Séoul" },
+            { pays: "Costa Rica", capitale: "San José" },
+            { pays: "Croatie", capitale: "Zagreb" },
+            { pays: "Cuba", capitale: "La Havane" }
+        ];
+
+        const quizStates = {
+            A: { currentQuestion: 0, score: 0, capitales: capitalesA },
+            B: { currentQuestion: 0, score: 0, capitales: capitalesB },
+            C: { currentQuestion: 0, score: 0, capitales: capitalesC }
+        };
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function getRandomCapitales(correctCapitale, quiz) {
+            const otherCapitales = quizStates[quiz].capitales
+                .filter(item => item.capitale !== correctCapitale)
+                .map(item => item.capitale);
+            return shuffleArray([...otherCapitales])
+                .slice(0, 3)
+                .concat([correctCapitale]);
+        }
+
+        function displayQuestion(quiz) {
+            const state = quizStates[quiz];
+            const pays = state.capitales[state.currentQuestion].pays;
+            const correctCapitale = state.capitales[state.currentQuestion].capitale;
+            const options = shuffleArray(getRandomCapitales(correctCapitale, quiz));
+
+            document.getElementById(`questionText${quiz}`).textContent = 
+                `Quelle est la capitale de ${pays} ?`;
+            document.getElementById(`currentQuestion${quiz}`).textContent = state.currentQuestion + 1;
+            document.getElementById(`totalQuestions${quiz}`).textContent = state.capitales.length;
+
+            const optionsContainer = document.getElementById(`options${quiz}`);
+            optionsContainer.innerHTML = '';
+
+            options.forEach(option => {
+                const button = document.createElement('div');
+                button.className = 'option';
+                button.textContent = option;
+                button.onclick = () => checkAnswer(option, correctCapitale, button, quiz);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selected, correct, button, quiz) {
+            const options = document.querySelectorAll(`#options${quiz} .option`);
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option.textContent === correct) {
+                    option.classList.add('correct');
+                }
+            });
+
+            if (selected === correct) {
+                quizStates[quiz].score++;
+                document.getElementById(`score${quiz}`).textContent = quizStates[quiz].score;
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+
+        function nextQuestion(quiz) {
+            const state = quizStates[quiz];
+            state.currentQuestion++;
+            if (state.currentQuestion >= state.capitales.length) {
+                const pourcentage = (state.score / state.capitales.length * 100).toFixed(1);
+                alert(`Quiz ${quiz} terminé !\nVotre score final est: ${state.score}/${state.capitales.length} (${pourcentage}%)`);
+                state.currentQuestion = 0;
+                state.score = 0;
+                document.getElementById(`score${quiz}`).textContent = 0;
+            }
+            displayQuestion(quiz);
+        }
+
+        function showQuiz(quiz) {
+            document.getElementById('quizA').style.display = 'none';
+            document.getElementById('quizB').style.display = 'none';
+            document.getElementById('quizC').style.display = 'none';
+            document.getElementById(`quiz${quiz}`).style.display = 'block';
+            
+            const state = quizStates[quiz];
+            state.currentQuestion = 0;
+            state.score = 0;
+            document.getElementById(`score${quiz}`).textContent = 0;
+            displayQuestion(quiz);
+        }
+    </script>
+</body>
+</html>
