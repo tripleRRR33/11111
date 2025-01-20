@@ -336,7 +336,7 @@ const questions = [
         correct: 0,
         anecdote: "Ce choix a été controversé, car il a été honoré en début de mandat."
     }
-];
+]
 
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
