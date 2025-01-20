@@ -3,84 +3,92 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background: radial-gradient(circle at center, #1d1f20, #131314);
     overflow-x: hidden;
-    font-size: 12px; /* Réduit de 14px à 12px */
-    color: #333;
+    font-size: 12px;
+    color: #fff;
+}
+
+header {
+    background: #1d1f20;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: #ff0099;
+    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 40px #ff0099;
 }
 
 .container {
-    max-width: 700px; /* Réduit de 800px à 700px */
+    max-width: 700px;
     margin: 0 auto;
-    padding: 15px; /* Réduit de 20px à 15px */
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px; /* Réduit de 20px à 15px */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Réduit de 10px 40px à 8px 30px */
+    padding: 15px;
+    background: rgba(29, 31, 32, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transform: scale(1);
     transition: transform 0.3s ease-in-out, background 0.3s;
 }
 
 .container:hover {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 1);
-}
-
-header {
-    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
-    color: white;
-    text-align: center;
-    padding: 20px 0; /* Réduit de 30px à 20px */
-    margin-bottom: 15px; /* Réduit de 20px à 15px */
-    border-radius: 10px; /* Réduit de 15px à 10px */
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5rem; /* Réduit de 2rem à 1.5rem */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Réduit de 8px 30px à 6px 20px */
+    background: rgba(29, 31, 32, 1);
 }
 
 .quiz-card {
-    background: white;
-    border-radius: 15px; /* Réduit de 20px à 15px */
-    padding: 15px; /* Réduit de 20px à 15px */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Réduit de 10px 40px à 8px 30px */
-    margin-bottom: 15px; /* Réduit de 20px à 15px */
+    background: rgba(29, 31, 32, 0.9);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
 .quiz-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Réduit de 15px 50px à 12px 40px */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .question {
-    font-size: 1.25rem; /* Réduit de 1.5rem à 1.25rem */
+    font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 15px; /* Réduit de 20px à 15px */
-    color: #333;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    color: #ff0099;
+    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
 }
 
 .option {
     display: block;
-    padding: 10px; /* Réduit de 15px à 10px */
-    margin: 8px 0; /* Réduit de 10px à 8px */
-    border: 2px solid #ddd;
-    border-radius: 8px; /* Réduit de 10px à 8px */
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #ff0099;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-size: 0.9rem; /* Réduit de 1rem à 0.9rem */
+    font-size: 0.9rem;
     font-weight: bold;
+    color: #fff;
+    background: #1d1f20;
+    box-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
 }
 
 .option:hover {
-    background: #ffe0b2;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Réduit de 10px 20px à 8px 20px */
-    transform: translateX(8px); /* Réduit de 10px à 8px */
+    background: #ff0099;
+    color: #1d1f20;
+    transform: translateX(8px);
 }
 
 .option.selected {
-    background: #ff9966;
-    color: white;
-    border-color: #ff9966;
+    background: #00ff99;
+    color: #1d1f20;
+    border-color: #00ff99;
 }
 
 .option.correct {
@@ -95,52 +103,50 @@ header {
     border-color: #ef5350;
 }
 
-.timer {
+.timer, .score, #result h2 {
     text-align: center;
-    font-size: 1.25rem; /* Réduit de 1.5rem à 1.25rem */
-    margin: 15px 0; /* Réduit de 20px à 15px */
-    color: #ff9966;
+    font-size: 1.25rem;
+    margin: 15px 0;
+    color: #ff0099;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.score {
-    text-align: center;
-    font-size: 1.25rem; /* Réduit de 1.5rem à 1.25rem */
-    margin: 15px 0; /* Réduit de 20px à 15px */
+    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
 }
 
 .anecdote {
     display: none;
-    background: #f3e5f5;
-    padding: 10px; /* Réduit de 15px à 10px */
-    border-radius: 8px; /* Réduit de 10px à 8px */
-    margin-top: 15px; /* Réduit de 20px à 15px */
+    background: #1d1f20;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
     font-style: italic;
-    font-size: 1rem; /* Réduit de 1.1rem à 1rem */
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
 }
 
 .btn {
     display: block;
     width: 100%;
-    padding: 12px; /* Réduit de 15px à 12px */
-    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+    padding: 12px;
+    background: #ff0099;
     color: white;
     border: none;
-    border-radius: 8px; /* Réduit de 10px à 8px */
-    font-size: 1.25rem; /* Réduit de 1.5rem à 1.25rem */
+    border-radius: 8px;
+    font-size: 1.25rem;
     cursor: pointer;
-    margin-top: 15px; /* Réduit de 20px à 15px */
-    transition: background 0.3s, transform 0.3s ease-in-out;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+    background: #00ff99;
+    color: #1d1f20;
     transform: scale(1.05);
+    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99;
 }
 
 #result {
     display: none;
     text-align: center;
-    font-size: 1.25rem; /* Réduit de 1.5rem à 1.25rem */
+    font-size: 1.25rem;
 }
