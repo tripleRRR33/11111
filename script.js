@@ -6,6 +6,78 @@ const questions = [
         anecdote: "Les prix Nobel ont été créés à la suite du testament d'Alfred Nobel, l'inventeur de la dynamite."
     },
     {
+        "question": "Quel est le seul domaine dans lequel Alfred Nobel n’a pas instauré de prix ?",
+        "options": ["Les mathématiques", "La chimie", "La médecine", "La physique"],
+        "correct": 0,
+        "anecdote": "Une rumeur populaire, bien que non vérifiée, dit qu'il aurait exclu les mathématiques par jalousie envers un mathématicien."
+    },
+    {
+        "question": "Quel prix a été ajouté en 1968 ?",
+        "options": ["Le prix d'économie", "Le prix de littérature", "Le prix de médecine", "Le prix de physique"],
+        "correct": 0,
+        "anecdote": "Ce prix est souvent appelé à tort 'Prix Nobel d'économie'."
+    },
+    {
+        "question": "Qui est la première femme à avoir reçu un prix Nobel ?",
+        "options": ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Barbara McClintock"],
+        "correct": 0,
+        "anecdote": "Elle a reçu le prix de physique en 1903 et est la seule femme à avoir reçu deux prix Nobel dans deux domaines différents (physique et chimie)."
+    },
+    {
+        "question": "Quel écrivain français a refusé le prix Nobel de littérature en 1964 ?",
+        "options": ["Jean-Paul Sartre", "Albert Camus", "Marcel Proust", "Simone de Beauvoir"],
+        "correct": 0,
+        "anecdote": "Il a refusé tous les honneurs officiels, y compris ce prestigieux prix."
+    },
+    {
+        "question": "Quelle organisation a reçu le prix Nobel de la paix en 1965 ?",
+        "options": ["UNICEF", "ONU", "Croix-Rouge", "Amnesty International"],
+        "correct": 0,
+        "anecdote": "L'UNICEF a été récompensée pour son travail en faveur des enfants dans le monde entier."
+    },
+    {
+        "question": "Quel président américain a reçu le prix Nobel de la paix en 2009 ?",
+        "options": ["Barack Obama", "Jimmy Carter", "Theodore Roosevelt", "Woodrow Wilson"],
+        "correct": 0,
+        "anecdote": "Ce choix a été controversé, car il a été honoré en début de mandat."
+    },
+    {
+        "question": "Combien de fois un prix Nobel a-t-il été partagé par plus de deux personnes ?",
+        "options": ["Jamais", "Une fois", "Deux fois", "Trois fois"],
+        "correct": 0,
+        "anecdote": "Jamais plus de trois personnes ne peuvent partager un prix Nobel, selon les règles du comité Nobel."
+    },
+    {
+        "question": "Quel est le plus âgé des lauréats du prix Nobel ?",
+        "options": ["John B. Goodenough", "Leonid Hurwicz", "William Nordhaus", "Arthur Ashkin"],
+        "correct": 0,
+        "anecdote": "Il a reçu le prix de chimie en 2019 à l'âge de 97 ans."
+    },
+    {
+        "question": "Combien de femmes ont reçu un prix Nobel en 2023 ?",
+        "options": ["3", "5", "2", "4"],
+        "correct": 0,
+        "anecdote": "Ce chiffre est en augmentation, mais les femmes restent sous-représentées parmi les lauréats."
+    },
+    {
+        "question": "Quel domaine récompense le plus de femmes parmi les prix Nobel ?",
+        "options": ["La paix", "La littérature", "La chimie", "La médecine"],
+        "correct": 0,
+        "anecdote": "Ce prix met souvent en avant les efforts pour l'égalité et les droits des femmes."
+    },
+    {
+        "question": "Qui a reçu le prix Nobel de littérature en 2021 ?",
+        "options": ["Abdulrazak Gurnah", "Kazuo Ishiguro", "Svetlana Alexievitch", "Bob Dylan"],
+        "correct": 0,
+        "anecdote": "Il est né à Zanzibar et écrit principalement sur les thèmes de l'exil et de la migration."
+    },
+    {
+        "question": "Dans quel domaine le prix Nobel est-il le plus souvent décerné à des équipes ?",
+        "options": ["La physique", "La chimie", "La médecine", "L'économie"],
+        "correct": 0,
+        "anecdote": "La physique exige souvent des collaborations importantes."
+    },
+    {
         question: "Quel est le pays d'origine d'Alfred Nobel ?",
         options: ["Norvège", "Danemark", "Suède", "Finlande"],
         correct: 2,
