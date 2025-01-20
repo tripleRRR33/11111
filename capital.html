@@ -1,8 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz des Capitales</title>
+<div id="quizE" class="quiz-section">
+    <div class="quiz-container quiz-e">
+        <h1>Quiz des Capitales - Pays en E</h1>
+        <div class="question">
+            <h2 class="question-text" id="questionTextE"></h2>
+            <div class="options" id="optionsE"></div>
+        </div>
+        <div class="progress">Question <span id="currentQuestionE">1</span>/<span id="totalQuestionsE"></span></div>
+        <div class="score">Score: <span id="scoreE">0</span></div>
+        <div class="controls">
+            <button onclick="nextQuestion('E')">Question suivante</button>
+        </div>
+    </div>
+</div>
     <style>
         /* Mêmes styles que précédemment */
         body {
