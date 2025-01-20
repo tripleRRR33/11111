@@ -6,6 +6,138 @@ const questions = [
     anecdote: "Bien qu’il ait été dépassé par Avatar en termes de recettes brutes, Autant en emporte le vent reste le plus rentable si l’on ajuste les recettes à l’inflation."
 },
    {
+    "question": "Qui est le créateur de Superman ?",
+    "options": ["Jerry Siegel et Joe Shuster", "Stan Lee et Steve Ditko", "Bob Kane et Bill Finger", "Jack Kirby et Joe Simon"],
+    "correct": 0,
+    "anecdote": "Superman a fait sa première apparition en 1938 dans *Action Comics #1* et est devenu l'un des super-héros les plus emblématiques."
+},
+
+{
+    "question": "Quel super-héros porte le nom d’alter ego de Bruce Wayne ?",
+    "options": ["Batman", "Robin", "Iron Man", "Green Lantern"],
+    "correct": 0,
+    "anecdote": "Batman est un justicier sans pouvoirs surhumains, utilisant son intelligence et ses compétences physiques exceptionnelles pour combattre le crime à Gotham City."
+},
+
+{
+    "question": "Quel super-héros a été le premier à être créé par Marvel Comics dans les années 1960 ?",
+    "options": ["Spider-Man", "Hulk", "Iron Man", "Thor"],
+    "correct": 0,
+    "anecdote": "Créé par Stan Lee et Steve Ditko, Spider-Man a révolutionné le genre des comics avec un héros adolescent qui fait face à des problèmes humains tout en combattant le crime."
+},
+
+{
+    "question": "Quelle équipe de super-héros a été formée par Captain America, Iron Man et Thor ?",
+    "options": ["Les Avengers", "Les X-Men", "Les Gardiens de la Galaxie", "La Ligue des Justiciers"],
+    "correct": 0,
+    "anecdote": "Les Avengers ont été formés dans les comics Marvel et sont devenus l'un des groupes de super-héros les plus populaires, notamment grâce aux films à succès."
+},
+
+{
+    "question": "Qui est l'ennemi juré de Superman, doté de pouvoirs similaires ?",
+    "options": ["Lex Luthor", "Doomsday", "Bizarro", "Darkseid"],
+    "correct": 0,
+    "anecdote": "Lex Luthor est l'un des plus grands génies criminels et utilise sa richesse et son intelligence pour contrer Superman."
+},
+
+{
+    "question": "Qui a popularisé la phrase 'May the Force be with you' ?",
+    "options": ["Star Wars", "Star Trek", "Doctor Who", "Battlestar Galactica"],
+    "correct": 0,
+    "anecdote": "'May the Force be with you' est devenu une phrase emblématique de *Star Wars*, utilisée par les Jedi pour exprimer leur souhait de chance et de succès avant les batailles."
+},
+
+{
+    "question": "Quelle marque a popularisé les baskets Air Jordan ?",
+    "options": ["Nike", "Adidas", "Reebok", "Puma"],
+    "correct": 0,
+    "anecdote": "Les Air Jordan, créées pour Michael Jordan, sont devenues une icône de mode et de performance, contribuant à populariser les baskets en tant qu'élément de style."
+},
+
+{
+    "question": "Quel acteur incarne le personnage de Jack Sparrow dans Pirates des Caraïbes ?",
+    "options": ["Johnny Depp", "Orlando Bloom", "Tom Hanks", "Robert Downey Jr."],
+    "correct": 0,
+    "anecdote": "Johnny Depp a incarné Jack Sparrow de manière mémorable, avec son jeu excentrique et son charisme, faisant du personnage l'une des figures les plus populaires du cinéma moderne."
+},
+
+{
+    "question": "Quel personnage de Star Wars est célèbre pour dire 'I am your father' ?",
+    "options": ["Dark Vador", "Obi-Wan Kenobi", "Yoda", "Han Solo"],
+    "correct": 0,
+    "anecdote": "La célèbre réplique de Dark Vador à Luke Skywalker dans *L'Empire contre-attaque* reste l'une des scènes les plus mythiques du cinéma."
+},
+
+{
+    "question": "Qui a joué le rôle de Hermione Granger dans les films Harry Potter ?",
+    "options": ["Emma Watson", "Rupert Grint", "Daniel Radcliffe", "Maggie Smith"],
+    "correct": 0,
+    "anecdote": "Emma Watson a incarné Hermione Granger, un personnage emblématique de l'univers *Harry Potter*, devenu une icône pour des millions de fans."
+},
+
+{
+    "question": "Quel est le roman le plus célèbre de J.K. Rowling ?",
+    "options": ["Harry Potter à l'école des sorciers", "Harry Potter et la Chambre des Secrets", "Harry Potter et le Prisonnier d'Azkaban", "Harry Potter et les Reliques de la Mort"],
+    "correct": 0,
+    "anecdote": "Le premier livre de la saga *Harry Potter* a captivé des millions de lecteurs et lancé un univers magique qui a influencé toute une génération."
+},
+
+{
+    "question": "Quelle est l’œuvre littéraire qui a popularisé le personnage de Sherlock Holmes ?",
+    "options": ["Les Aventures de Sherlock Holmes", "Le Chien des Baskerville", "La Vallée de la Peur", "Le Dernier Problème"],
+    "correct": 0,
+    "anecdote": "Sherlock Holmes, le détective brillant de Sir Arthur Conan Doyle, est l'un des personnages les plus célèbres de la littérature policière."
+},
+
+{
+    "question": "Quel est le premier livre de la série Le Seigneur des Anneaux ?",
+    "options": ["La Communauté de l'Anneau", "Les Deux Tours", "Le Retour du Roi", "Le Hobbit"],
+    "correct": 0,
+    "anecdote": "Ce livre, écrit par J.R.R. Tolkien, commence l'aventure épique de la trilogie *Le Seigneur des Anneaux*, plongeant les lecteurs dans le monde mythique de la Terre du Milieu."
+},
+
+{
+    "question": "Qui a écrit le roman dystopique 1984 ?",
+    "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Margaret Atwood"],
+    "correct": 0,
+    "anecdote": "1984 est une œuvre visionnaire de George Orwell, explorant les dangers d'un gouvernement totalitaire et d'une surveillance omniprésente."
+},
+
+{
+    "question": "Quelle série de livres pour enfants met en scène des personnages comme Katniss Everdeen et Peeta Mellark ?",
+    "options": ["Hunger Games", "Harry Potter", "Percy Jackson", "Les Chroniques de Narnia"],
+    "correct": 0,
+    "anecdote": "La série *Hunger Games* de Suzanne Collins suit Katniss, une jeune fille forcée de participer à des jeux de survie, abordant des thèmes puissants de résistance et de pouvoir."
+},
+
+{
+    "question": "Quel est le mème internet le plus célèbre impliquant un chat avec un visage perplexe ?",
+    "options": ["Grumpy Cat", "Nyan Cat", "Keyboard Cat", "Lil Bub"],
+    "correct": 0,
+    "anecdote": "Grumpy Cat, dont le vrai nom était Tardar Sauce, est devenu une icône de mème grâce à son expression faciale constante de mécontentement."
+},
+
+{
+    "question": "Quel est le nom du mème viral de 2016 qui met en scène un homme avec un doigt pointé et un regard de défi ?",
+    "options": ["Distracted Boyfriend", "Woman Yelling at a Cat", "Roll Safe", "Mocking SpongeBob"],
+    "correct": 0,
+    "anecdote": "Le mème *Distracted Boyfriend* est une image qui symbolise la distraction ou la tentation, avec l'homme qui regarde une autre femme alors qu'il est en couple."
+},
+
+{
+    "question": "Quel est le nom du créateur de l'énorme phénomène viral Gangnam Style ?",
+    "options": ["PSY", "BTS", "Big Bang", "EXO"],
+    "correct": 0,
+    "anecdote": "PSY a rendu célèbre *Gangnam Style* avec son style de danse unique et sa chanson qui a battu des records de vues sur YouTube."
+},
+
+{
+    "question": "Quel mème populaire utilise une image d’un chien Shiba Inu accompagné de textes en anglais 'such' et 'much' ?",
+    "options": ["Doge", "Pepe the Frog", "Bad Luck Brian", "Success Kid"],
+    "correct": 0,
+    "anecdote": "Doge est un mème qui met en scène un chien Shiba Inu avec des légendes humoristiques, devenu un symbole de l'absurdité sur internet."
+},
+   {
     question: "Quel est le groupe légendaire qui a écrit Bohemian Rhapsody ?",
     options: ["The Beatles", "Queen", "Pink Floyd", "Led Zeppelin"],
     correct: 1,
