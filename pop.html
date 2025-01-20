@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Nobel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pop Culture</h1>
+        <p>Testez vos connaissances!</p>
+    </header>
+
+    <div class="container">
+        <button id="start-quiz" class="btn">Démarrer le Quiz</button> <!-- Bouton pour démarrer le quiz -->
+        <div class="timer">Temps restant: <span id="time">20</span>s</div>
+        <div class="score">Score: <span id="score">0</span>/<span id="total">0</span></div>
+        <div id="question-counter">Question 0/10</div>
+        <div id="quiz-container"></div>
+        <div id="result">
+            <h2>Quiz terminé !</h2>
+            <p>Votre score final : <span id="final-score">0</span>%</p>
+            <button class="btn" onclick="location.reload()">Recommencer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
