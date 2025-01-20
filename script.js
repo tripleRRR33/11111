@@ -6,6 +6,138 @@ const questions = [
         anecdote: "Les prix Nobel ont été créés à la suite du testament d'Alfred Nobel, l'inventeur de la dynamite."
     },
     {
+        "question": "Pourquoi le prix Nobel de la paix de 1973 est-il controversé ?",
+        "options": [
+            "Il a été attribué à Henry Kissinger et Lê Đức Thọ pour les accords de paix au Vietnam, bien que la guerre ait continué.",
+            "Il a été attribué à des personnes accusées de crimes de guerre.",
+            "Il n'a pas été décerné cette année-là.",
+            "Il a été partagé entre plus de trois personnes."
+        ],
+        "correct": 0,
+        "anecdote": "Lê Đức Thọ a refusé le prix, une première dans l'histoire du Nobel."
+    },
+    {
+        "question": "Quel écrivain controversé a reçu le prix Nobel de littérature en 2016 ?",
+        "options": [
+            "Bob Dylan",
+            "Haruki Murakami",
+            "Stephen King",
+            "Margaret Atwood"
+        ],
+        "correct": 0,
+        "anecdote": "Ce choix a surpris beaucoup de monde, car Dylan est un auteur-compositeur."
+    },
+    {
+        "question": "Quelle grande omission des prix Nobel est souvent critiquée ?",
+        "options": [
+            "Mahatma Gandhi",
+            "Nelson Mandela",
+            "Frédéric Chopin",
+            "Sigmund Freud"
+        ],
+        "correct": 0,
+        "anecdote": "Malgré plusieurs nominations, Gandhi n’a jamais reçu le prix Nobel de la paix."
+    },
+    {
+        "question": "Quel prix Nobel n'a pas été décerné pendant les deux guerres mondiales ?",
+        "options": [
+            "Le prix Nobel de la paix",
+            "Le prix Nobel de littérature",
+            "Le prix Nobel de chimie",
+            "Le prix Nobel de physique"
+        ],
+        "correct": 0,
+        "anecdote": "Pendant ces périodes, les conflits rendaient difficile l'attribution de ce prix."
+    },
+    {
+        "question": "Quel pays compte le plus grand nombre de lauréats Nobel ?",
+        "options": [
+            "Les États-Unis",
+            "Le Royaume-Uni",
+            "L'Allemagne",
+            "La France"
+        ],
+        "correct": 0,
+        "anecdote": "Une part importante des prix américains est attribuée à des scientifiques immigrés."
+    },
+    {
+        "question": "Quel événement a conduit à la création du prix Nobel de la paix ?",
+        "options": [
+            "La lecture du testament d'Alfred Nobel",
+            "La fin des guerres napoléoniennes",
+            "Le traité de Versailles",
+            "La correspondance d'Alfred Nobel avec un scientifique pacifiste"
+        ],
+        "correct": 0,
+        "anecdote": "Nobel a été influencé par sa correspondance avec Bertha von Suttner, militante pacifiste."
+    },
+    {
+        "question": "Combien de fois le prix Nobel de littérature a-t-il été décerné à des écrivains francophones ?",
+        "options": [
+            "16 fois",
+            "10 fois",
+            "12 fois",
+            "20 fois"
+        ],
+        "correct": 0,
+        "anecdote": "Parmi eux, des auteurs comme Albert Camus, Jean-Paul Sartre (qui l'a refusé) et Annie Ernaux."
+    },
+    {
+        "question": "Quelle scientifique a découvert la radioactivité et reçu deux prix Nobel ?",
+        "options": [
+            "Marie Curie",
+            "Irène Joliot-Curie",
+            "Barbara McClintock",
+            "Rosalind Franklin"
+        ],
+        "correct": 0,
+        "anecdote": "Elle est enterrée au Panthéon à Paris, et son cercueil est plombé en raison de la radioactivité."
+    },
+    {
+        "question": "Quel auteur américain a reçu le prix Nobel de littérature en 1954 ?",
+        "options": [
+            "Ernest Hemingway",
+            "Mark Twain",
+            "F. Scott Fitzgerald",
+            "William Faulkner"
+        ],
+        "correct": 0,
+        "anecdote": "Il a failli mourir dans deux crashs d’avion en Afrique l’année précédente."
+    },
+    {
+        "question": "Quel ancien secrétaire général de l'ONU a reçu le prix Nobel de la paix en 2001 ?",
+        "options": [
+            "Kofi Annan",
+            "Ban Ki-moon",
+            "Dag Hammarskjöld",
+            "Boutros Boutros-Ghali"
+        ],
+        "correct": 0,
+        "anecdote": "Il a partagé le prix avec les Nations unies pour leurs efforts en faveur de la paix mondiale."
+    },
+    {
+        "question": "Qui a été le premier Afro-Américain à recevoir un prix Nobel ?",
+        "options": [
+            "Ralph Bunche",
+            "Martin Luther King Jr.",
+            "Frederick Douglass",
+            "Barack Obama"
+        ],
+        "correct": 0,
+        "anecdote": "Il a reçu le prix de la paix en 1950 pour son rôle dans la médiation du conflit israélo-arabe."
+    },
+    {
+        "question": "Quel célèbre physicien a reçu le prix Nobel de physique en 1921 ?",
+        "options": [
+            "Albert Einstein",
+            "Niels Bohr",
+            "Max Planck",
+            "Enrico Fermi"
+        ],
+        "correct": 0,
+        "anecdote": "Ce n’est pas pour sa théorie de la relativité, mais pour sa découverte de l'effet photoélectrique."
+    },
+    {
         "question": "Quel est le seul domaine dans lequel Alfred Nobel n’a pas instauré de prix ?",
         "options": ["Les mathématiques", "La chimie", "La médecine", "La physique"],
         "correct": 0,
