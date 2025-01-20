@@ -129,6 +129,8 @@
         <button onclick="showQuiz('B')" style="background: #00b894;">Pays en B</button>
         <button onclick="showQuiz('C')" style="background: #e17055;">Pays en C</button>
         <button onclick="showQuiz('D')" style="background: #e74c3c;">Pays en D</button>
+        <button onclick="showQuiz('E')" style="background: #3498db;">Pays en E</button>
+    </div>
     </div>
 
     <!-- Sections des quiz A et B identiques à avant -->
@@ -255,14 +257,28 @@
             { pays: "Djibouti", capitale: "Djibouti" },
             { pays: "Dominique", capitale: "Roseau" }
         ];
+         const capitalesE = [
+            { pays: "Égypte", capitale: "Le Caire" },
+            { pays: "El Salvador", capitale: "San Salvador" },
+            { pays: "Émirats arabes unis", capitale: "Abou Dhabi" },
+            { pays: "Équateur", capitale: "Quito" },
+            { pays: "Érythrée", capitale: "Asmara" },
+            { pays: "Espagne", capitale: "Madrid" },
+            { pays: "Estonie", capitale: "Tallinn" },
+            { pays: "Eswatini", capitale: "Mbabane (administrative), Lobamba (législative)" },
+            { pays: "États-Unis", capitale: "Washington, D.C." },
+            { pays: "Éthiopie", capitale: "Addis-Abeba" }
+        ];
 
 
         const quizStates = {
             A: { currentQuestion: 0, score: 0, capitales: capitalesA },
             B: { currentQuestion: 0, score: 0, capitales: capitalesB },
             C: { currentQuestion: 0, score: 0, capitales: capitalesC },
-            D: { currentQuestion: 0, score: 0, capitales: capitalesD }
+            D: { currentQuestion: 0, score: 0, capitales: capitalesD },
+            E: { currentQuestion: 0, score: 0, capitales: capitalesE }
         };
+    
 
         function shuffleArray(array) {
             const newArray = [...array];
