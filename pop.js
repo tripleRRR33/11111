@@ -251,7 +251,6 @@ const questions = [
     correct: 2,
     anecdote: "Ce vaisseau emblématique, piloté par Han Solo et Chewbacca, est devenu un symbole de la saga Star Wars et est légendaire pour sa rapidité."
 },
-   [
     {
         "question": "Quel est le nom de l’application qui a révolutionné les vidéos courtes et a popularisé des mèmes ?",
         "options": ["TikTok", "Instagram", "Vine", "Snapchat"],
@@ -336,6 +335,131 @@ const questions = [
         "correct": 0,
         "anecdote": "Friends a propulsé Jennifer Aniston au sommet de la célébrité mondiale, grâce à son rôle de Rachel Green et ses performances comiques mémorables."
     },
+   {
+    "question": "Quelle icône de la mode a popularisé les looks exagérés avec des structures volumineuses et des couleurs vives dans les années 80 ?",
+    "options": ["Jean-Paul Gaultier", "Coco Chanel", "Christian Dior", "Yves Saint Laurent"],
+    "correct": 0,
+    "anecdote": "Jean-Paul Gaultier est reconnu pour ses créations avant-gardistes et audacieuses, influençant de nombreux designers dans l'industrie de la mode."
+},
+{
+    "question": "Quelle peinture de l’artiste Andy Warhol a représenté une boîte de soupe Campbell’s ?",
+    "options": ["Campbell's Soup Cans", "Marilyn Diptych", "Eight Elvises", "Gold Marilyn Monroe"],
+    "correct": 0,
+    "anecdote": "Ce tableau emblématique de Warhol, réalisé en 1962, est un exemple classique de l’Art Pop, remettant en question les notions d’art traditionnel et de consommation de masse."
+},
+{
+    "question": "Quel artiste contemporain est connu pour ses œuvres géantes en street art, souvent inspirées par la politique et la société ?",
+    "options": ["Banksy", "Jean-Michel Basquiat", "Keith Haring", "Shepard Fairey"],
+    "correct": 0,
+    "anecdote": "Banksy est un artiste anonyme dont les œuvres dissidentes sont devenues célèbres pour leurs messages critiques sur la société, la politique et les institutions."
+},
+{
+    "question": "Quel réseau social a été racheté par Meta (anciennement Facebook) en 2012 ?",
+    "options": ["Instagram", "Snapchat", "Twitter", "TikTok"],
+    "correct": 0,
+    "anecdote": "Instagram est devenu l’une des plateformes les plus populaires pour le partage de photos et vidéos, avec des millions d’utilisateurs dans le monde entier."
+},
+{
+    "question": "Quel site de vidéos courtes est devenu viral avec ses défis et ses effets visuels ?",
+    "options": ["TikTok", "Vine", "Instagram Reels", "YouTube Shorts"],
+    "correct": 0,
+    "anecdote": "TikTok a révolutionné le partage de contenu court, introduisant des filtres, des défis et des contenus créatifs adaptés à un public mondial."
+},
+{
+    "question": "Quelle application permet de créer des stories et de partager des contenus éphémères ?",
+    "options": ["Snapchat", "Instagram", "WhatsApp", "Facebook"],
+    "correct": 0,
+    "anecdote": "Snapchat a popularisé le contenu éphémère avec ses filtres innovants et ses stories interactives, devenant une plateforme incontournable pour les jeunes utilisateurs."
+},
+{
+    "question": "Quelle est l’application de messagerie instantanée la plus utilisée dans le monde ?",
+    "options": ["WhatsApp", "Messenger", "Telegram", "WeChat"],
+    "correct": 0,
+    "anecdote": "WhatsApp permet d’envoyer des messages texte, des appels vocaux et des appels vidéo, rendant la communication instantanée accessible et universelle."
+},
+{
+    "question": "Quel réseau social a popularisé les 'threads' où les utilisateurs publient des messages en série ?",
+    "options": ["Twitter", "Facebook", "Reddit", "Tumblr"],
+    "correct": 0,
+    "anecdote": "Twitter a introduit les 'threads' pour structurer les discussions et permettre des dialogues approfondis sous forme de posts successifs."
+},
+{
+    "question": "Quel designer est connu pour avoir réinventé le concept de l’élégance avec des créations minimalistes ?",
+    "options": ["Yves Saint Laurent", "Coco Chanel", "Karl Lagerfeld", "Jean-Paul Gaultier"],
+    "correct": 0,
+    "anecdote": "Yves Saint Laurent a été un pionnier dans la mode contemporaine, introduisant des looks épurés et des silhouettes modernes qui redéfinissaient l'élégance."
+},
+{
+    "question": "Quelle it-girl des années 2000 est célèbre pour ses apparitions dans The Simple Life ?",
+    "options": ["Paris Hilton", "Kim Kardashian", "Nicole Richie", "Lindsay Lohan"],
+    "correct": 0,
+    "anecdote": "Paris Hilton est devenue une icône de la mode et du divertissement, connue pour ses looks excentriques et ses multiples collaborations dans la mode et les affaires."
+},
+{
+    "question": "Quelle marque de baskets est associée au modèle 'Air Jordan 1' ?",
+    "options": ["Nike", "Adidas", "Puma", "Reebok"],
+    "correct": 0,
+    "anecdote": "La série Air Jordan, développée en partenariat avec Michael Jordan, est devenue un classique du streetwear, symbolisant la culture sneaker."
+},
+{
+    "question": "Quel designer est reconnu pour ses créations de haute couture qui mélangent tradition et modernité ?",
+    "options": ["Valentino Garavani", "Chanel", "Giorgio Armani", "Dior"],
+    "correct": 0,
+    "anecdote": "Valentino est célèbre pour ses robes de bal et ses créations qui allient raffinement et modernité, souvent portées par des célébrités sur les tapis rouges."
+},
+{
+    "question": "Quelle icône de la musique a popularisé les lunettes aviateurs et les tenues futuristes ?",
+    "options": ["Lady Gaga", "Madonna", "Beyoncé", "Rihanna"],
+    "correct": 0,
+    "anecdote": "Lady Gaga est connue pour ses tenues extravagantes et ses performances théâtrales, influençant la mode pop avec des looks avant-gardistes et uniques."
+},
+{
+    "question": "Quel jeu a popularisé le genre Battle Royale avant Fortnite ?",
+    "options": ["PlayerUnknown's Battlegrounds (PUBG)", "Apex Legends", "Call of Duty: Warzone", "H1Z1"],
+    "correct": 0,
+    "anecdote": "PUBG a été l’un des premiers jeux à introduire le genre Battle Royale, où des joueurs s’affrontent sur une île jusqu’à ce qu’un seul survivant reste."
+},
+{
+    "question": "Quel jeu vidéo a introduit les éléments de survie dans un monde ouvert avec des zombies ?",
+    "options": ["DayZ", "Left 4 Dead", "The Last of Us", "State of Decay"],
+    "correct": 0,
+    "anecdote": "DayZ a lancé le genre de survie zombie dans des environnements massifs et réalistes, inspirant de nombreux jeux modernes."
+},
+{
+    "question": "Quel jeu a introduit les mécaniques de crafting et de construction massives, influençant des jeux comme Minecraft ?",
+    "options": ["Terraria", "Minecraft", "Roblox", "No Man's Sky"],
+    "correct": 0,
+    "anecdote": "Terraria a popularisé les jeux de survie et de création dans un monde ouvert 2D, mettant l’accent sur l’exploration et l’innovation du gameplay."
+},
+{
+    "question": "Quel jeu est connu pour ses 'emotes' et son style visuel cartoon ?",
+    "options": ["Fortnite", "Overwatch", "League of Legends", "Apex Legends"],
+    "correct": 0,
+    "anecdote": "Fortnite a popularisé le concept de danses et d’émotions virtuelles sous forme d’emotes, enrichissant l’interaction dans le jeu avec des éléments sociaux."
+},
+{
+    "question": "Quel jeu de rôle célèbre est axé sur la mythologie nordique avec le personnage principal Kratos ?",
+    "options": ["God of War", "Skyrim", "Dark Souls", "The Witcher 3"],
+    "correct": 0,
+    "anecdote": "God of War a redéfini les jeux d’action-aventure en offrant une narration immersive et un gameplay axé sur la mythologie scandinave."
+},
+{
+    "question": "Quel film de science-fiction a popularisé l’idée de voyages dans le temps et a introduit le personnage de Doc Brown ?",
+    "options": ["Retour vers le Futur (Back to the Future)", "Terminator", "Interstellar", "Donnie Darko"],
+    "correct": 0,
+    "anecdote": "Ce film, réalisé par Robert Zemeckis, raconte les aventures de Marty McFly, qui voyage dans le passé grâce à la DeLorean, une voiture modifiée par le Dr. Emmett Brown."
+},
+{
+    "question": "Quel film d’animation de Pixar met en scène un robot nommé WALL-E ?",
+    "options": ["WALL-E", "Toy Story", "Monstres & Cie", "Coco"],
+    "correct": 0,
+    "anecdote": "WALL-E est un film d’animation où un robot solitaire cherche à nettoyer la Terre, tout en découvrant l’amour et l’espoir dans un monde abandonné par l’humanité."
+},
+{
+    "question": "Dans quelle série de films trouve-t-on des personnages tels que Han Solo, Luke Skywalker et Darth Vader ?",
+    "options": ["Star Wars", "Star Trek", "Harry Potter", "The Matrix"],
+    "correct": 0,
+},
     {
         "question": "Quel artiste hip-hop a popularisé les tatouages faciaux et le style excentrique avec des teintes de cheveux colorées ?",
         "options": ["Lil Uzi Vert", "Travis Scott", "Post Malone", "Kanye West"],
@@ -361,7 +485,6 @@ const questions = [
         "anecdote": "Frank Mason Robinson a écrit le nom de Coca-Cola en 1885, contribuant à l'identité visuelle intemporelle de la marque emblématique."
     }
 ]
-
 
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
