@@ -246,6 +246,7 @@ const scoreSpan = document.getElementById('score');
 const totalSpan = document.getElementById('total');
 const timeSpan = document.getElementById('time');
 const finalScoreSpan = document.getElementById('final-score');
+const questionCounterSpan = document.getElementById('question-counter'); // Ajoutez cette ligne
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -291,6 +292,7 @@ function showQuestion() {
         </div>
     `;
 
+    questionCounterSpan.textContent = `Question ${currentQuestionIndex + 1}/10`; // Mettez à jour le compteur de questions
     startTimer();
 }
 
@@ -326,11 +328,12 @@ function showResult() {
     quizContainer.style.display = 'none';
     resultDiv.style.display = 'block';
     document.querySelector('.timer').style.display = 'none';
-    finalScoreSpan.textContent = Math.round((score / questions.length) * 100);
+    finalScoreSpan.textContent = Math.round((score / 10) * 100); // Divisez par 10 car il y a 10 questions
 }
 
 function initQuiz() {
     shuffleArray(questions);
+    questions = questions.slice(0, 10); // Sélectionner seulement 10 questions
     currentQuestionIndex = 0;
     score = 0;
     scoreSpan.textContent = score;
