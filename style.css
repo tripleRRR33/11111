@@ -5,12 +5,13 @@ body {
     margin: 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     overflow-x: hidden;
+    font-size: 14px;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -26,8 +27,8 @@ header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 40px 0;
-    margin-bottom: 30px;
+    padding: 20px 0;
+    margin-bottom: 20px;
     border-radius: 15px;
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
@@ -36,9 +37,9 @@ header {
 .quiz-card {
     background: white;
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -47,7 +48,7 @@ header {
 }
 
 .question {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 25px;
     color: #333;
@@ -56,13 +57,13 @@ header {
 
 .option {
     display: block;
-    padding: 15px;
-    margin: 15px 0;
+    padding: 10px;
+    margin: 8px 0;
     border: 2px solid #ddd;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -92,7 +93,7 @@ header {
 
 .timer {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 25px 0;
     color: #667eea;
     font-weight: bold;
@@ -101,7 +102,7 @@ header {
 
 .score {
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin: 25px 0;
 }
 
@@ -118,14 +119,14 @@ header {
 .btn {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 12px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 10px;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 15px;
     transition: background 0.3s, transform 0.3s ease-in-out;
 }
 
