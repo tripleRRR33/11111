@@ -5,22 +5,12 @@ body {
     margin: 0;
     background: radial-gradient(circle at center, #1d1f20, #131314);
     overflow-x: hidden;
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.quiz-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 header {
@@ -31,7 +21,7 @@ header {
     margin-bottom: 15px;
     border-radius: 10px;
     font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -43,7 +33,7 @@ header h1 {
 .container {
     max-width: 700px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px;
     background: rgba(29, 31, 32, 0.95);
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -59,7 +49,7 @@ header h1 {
 .quiz-card {
     background: rgba(29, 31, 32, 0.9);
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
@@ -71,7 +61,7 @@ header h1 {
 }
 
 .question {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: #ff0099;
@@ -80,13 +70,13 @@ header h1 {
 
 .option {
     display: block;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 15px;
+    margin: 10px 0;
     border: 2px solid #ff0099;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     background: #1d1f20;
@@ -119,7 +109,7 @@ header h1 {
 
 .timer, .score, #result h2 {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 15px 0;
     color: #ff0099;
     font-weight: bold;
@@ -129,11 +119,11 @@ header h1 {
 .anecdote {
     display: none;
     background: #1d1f20;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: #fff;
     box-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
 }
@@ -141,12 +131,12 @@ header h1 {
 .btn {
     display: block;
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background: #ff0099;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     cursor: pointer;
     margin-top: 15px;
     transition: background 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
@@ -162,5 +152,5 @@ header h1 {
 #result {
     display: none;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
