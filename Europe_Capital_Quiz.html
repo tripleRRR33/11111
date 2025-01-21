@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Quiz - Capitales d'Europe</h1>
+  <header>
+    <h1>Quiz - Capitales d'Europe</h1>
+  </header>
   <div class="quiz-container">
     <div id="quiz">
       <p class="question" id="question">Chargement de la question...</p>
@@ -15,7 +17,7 @@
     </div>
     <div class="score" id="score" style="display: none;">Votre score : 0</div>
     <div id="country-counter">Pays 1/29</div>
-    <button class="restart" id="restart" style="display: none;">Recommencer le quiz</button>
+    <button class="btn restart" id="restart" style="display: none;">Recommencer le quiz</button>
   </div>
 
   <script>
@@ -69,7 +71,6 @@
       { country: "Vatican", capital: "Vatican" }
     ];
 
-    // Shuffle the questions array
     function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -94,8 +95,7 @@
 
       optionsEl.innerHTML = "";
       const options = questions.map(q => q.capital);
-
-      // Ensure the correct answer is included
+      
       const shuffledOptions = new Set([question.capital]);
       while (shuffledOptions.size < 4) {
         const randomOption = options[Math.floor(Math.random() * options.length)];
@@ -146,7 +146,7 @@
     }
 
     restartBtn.addEventListener("click", () => {
-      shuffle(questions); // Shuffle the questions again
+      shuffle(questions);
       currentQuestion = 0;
       score = 0;
       questionEl.style.display = "block";
