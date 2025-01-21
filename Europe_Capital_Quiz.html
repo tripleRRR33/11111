@@ -75,6 +75,7 @@
       <div class="options" id="options"></div>
     </div>
     <div class="score" id="score" style="display: none;">Votre score : 0</div>
+    <div id="country-counter">Pays 1/29</div> <!-- Ajoutez cette ligne -->
     <button class="restart" id="restart" style="display: none;">Recommencer le quiz</button>
   </div>
 
@@ -127,85 +128,85 @@
       { country: "Slovénie", capital: "Ljubljana" },
       { country: "Ukraine", capital: "Kiev" },
       { country: "Vatican", capital: "Vatican" }
-      ];
-  
-      let currentQuestion = 0;
-      let score = 0;
-      const questionEl = document.getElementById("question");
-      const optionsEl = document.getElementById("options");
-      const scoreEl = document.getElementById("score");
-      const restartBtn = document.getElementById("restart");
-      const countryCounterEl = document.getElementById("country-counter"); // Ajoutez cette ligne
-  
-      function loadQuestion() {
-        const question = questions[currentQuestion];
-        questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
-        countryCounterEl.textContent = `Pays ${currentQuestion + 1}/${questions.length}`; // Mettez à jour le compteur
-  
-        optionsEl.innerHTML = "";
-        const options = questions.map(q => q.capital);
-  
-        // Ensure the correct answer is included
-        const shuffledOptions = new Set([question.capital]);
-        while (shuffledOptions.size < 4) {
-          const randomOption = options[Math.floor(Math.random() * options.length)];
-          shuffledOptions.add(randomOption);
-        }
-  
-        Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
-          const button = document.createElement("button");
-          button.textContent = option;
-          button.classList.add("option");
-          button.addEventListener("click", () => checkAnswer(option));
-          optionsEl.appendChild(button);
-        });
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart");
+    const countryCounterEl = document.getElementById("country-counter"); // Ajoutez cette ligne
+
+    function loadQuestion() {
+      const question = questions[currentQuestion];
+      questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+      countryCounterEl.textContent = `Pays ${currentQuestion + 1}/${questions.length}`; // Mettez à jour le compteur
+
+      optionsEl.innerHTML = "";
+      const options = questions.map(q => q.capital);
+
+      // Ensure the correct answer is included
+      const shuffledOptions = new Set([question.capital]);
+      while (shuffledOptions.size < 4) {
+        const randomOption = options[Math.floor(Math.random() * options.length)];
+        shuffledOptions.add(randomOption);
       }
-  
-      function checkAnswer(selected) {
-        const correctAnswer = questions[currentQuestion].capital;
-        const buttons = optionsEl.querySelectorAll(".option");
-        buttons.forEach(button => {
-          if (button.textContent === correctAnswer) {
-            button.classList.add("correct");
-          } else {
-            button.classList.add("incorrect");
-          }
-          button.disabled = true;
-        });
-  
-        if (selected === correctAnswer) {
-          score++;
-        }
-  
-        setTimeout(() => {
-          currentQuestion++;
-          if (currentQuestion < questions.length) {
-            loadQuestion();
-          } else {
-            showScore();
-          }
-        }, 1000);
-      }
-  
-      function showScore() {
-        questionEl.style.display = "none";
-        optionsEl.style.display = "none";
-        scoreEl.style.display = "block";
-        restartBtn.style.display = "block";
-        scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
-      }
-  
-      restartBtn.addEventListener("click", () => {
-        currentQuestion = 0;
-        score = 0;
-        questionEl.style.display = "block";
-        optionsEl.style.display = "grid";
-        scoreEl.style.display = "none";
-        restartBtn.style.display = "none";
-        loadQuestion();
+
+      Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsEl.appendChild(button);
       });
-  
+    }
+
+    function checkAnswer(selected) {
+      const correctAnswer = questions[currentQuestion].capital;
+      const buttons = optionsEl.querySelectorAll(".option");
+      buttons.forEach(button => {
+        if (button.textContent === correctAnswer) {
+          button.classList.add("correct");
+        } else {
+          button.classList.add("incorrect");
+        }
+        button.disabled = true;
+      });
+
+      if (selected === correctAnswer) {
+        score++;
+      }
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          showScore();
+        }
+      }, 1000);
+    }
+
+    function showScore() {
+      questionEl.style.display = "none";
+      optionsEl.style.display = "none";
+      scoreEl.style.display = "block";
+      restartBtn.style.display = "block";
+      scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      questionEl.style.display = "block";
+      optionsEl.style.display = "grid";
+      scoreEl.style.display = "none";
+      restartBtn.style.display = "none";
       loadQuestion();
-    </script>
-  </body>
-  </html>
+    });
+
+    loadQuestion();
+  </script>
+</body>
+</html>
