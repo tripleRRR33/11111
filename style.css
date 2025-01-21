@@ -1,160 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-:root {
-    --primary-color: #6200ea;
-    --secondary-color: #03dac6;
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --hover-color: #bb86fc;
-}
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier Prime', monospace;
     margin: 0;
-    background: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    background: #f4f4f9;
+    overflow-x: hidden;
+    font-size: 12px;
+    color: #333;
 }
 
 header {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: #333;
+    color: #f4f4f9;
     text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    font-size: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: background 0.3s;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 header h1 {
-    margin: 0;
-    color: var(--secondary-color);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ff6347;
 }
 
-.quiz-container {
-    max-width: 700px;
-    margin: 20px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, background 0.3s;
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-.quiz-container:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+.container:hover {
+    transform: scale(1.02);
 }
 
 .quiz-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
 }
 
 .quiz-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .question {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    color: #ff6347;
 }
 
 .option {
     display: block;
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid var(--secondary-color);
-    border-radius: 10px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ff6347;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    font-size: 1.25rem;
+    transition: background 0.3s;
+    font-size: 0.9rem;
     font-weight: bold;
-    color: var(--text-color);
-    background: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: #333;
+    background: #f9f9f9;
 }
 
 .option:hover {
-    background: var(--hover-color);
-    transform: translateX(10px);
+    background: #ff6347;
+    color: #fff;
 }
 
 .option.selected {
-    background: var(--secondary-color);
-    color: var(--background-color);
-    border-color: var(--secondary-color);
+    background: #90ee90;
+    color: #fff;
+    border-color: #90ee90;
 }
 
 .option.correct {
-    background: #4caf50;
-    color: white;
-    border-color: #4caf50;
+    background: #32cd32;
+    color: #fff;
+    border-color: #32cd32;
 }
 
 .option.wrong {
-    background: #f44336;
-    color: white;
-    border-color: #f44336;
+    background: #ff4500;
+    color: #fff;
+    border-color: #ff4500;
 }
 
 .timer, .score, #result h2 {
     text-align: center;
-    font-size: 1.75rem;
-    margin: 20px 0;
-    color: var(--secondary-color);
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #ff6347;
     font-weight: bold;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .anecdote {
     display: none;
-    background: var(--primary-color);
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
     font-style: italic;
-    font-size: 1.25rem;
-    color: var(--text-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
 }
 
 .btn {
     display: block;
     width: 100%;
-    padding: 15px;
-    background: var(--secondary-color);
-    color: var(--background-color);
+    padding: 10px;
+    background: #ff6347;
+    color: #fff;
     border: none;
-    border-radius: 10px;
-    font-size: 1.75rem;
+    border-radius: 5px;
+    font-size: 1.25rem;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: var(--hover-color);
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: #ff4500;
 }
 
 #result {
     display: none;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
 }
