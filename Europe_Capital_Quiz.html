@@ -99,85 +99,112 @@
       { country: "Hongrie", capital: "Budapest" },
       { country: "Irlande", capital: "Dublin" },
       { country: "Islande", capital: "Reykjavik" },
-      { country: "Luxembourg", capital: "Ville de Luxembourg" }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-
-    const questionEl = document.getElementById("question");
-    const optionsEl = document.getElementById("options");
-    const scoreEl = document.getElementById("score");
-    const restartBtn = document.getElementById("restart");
-
-    function loadQuestion() {
-      const question = questions[currentQuestion];
-      questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
-
-      optionsEl.innerHTML = "";
-      const options = questions.map(q => q.capital);
-
-      // Ensure the correct answer is included
-      const shuffledOptions = new Set([question.capital]);
-      while (shuffledOptions.size < 4) {
-        const randomOption = options[Math.floor(Math.random() * options.length)];
-        shuffledOptions.add(randomOption);
-      }
-
-      Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.classList.add("option");
-        button.addEventListener("click", () => checkAnswer(option));
-        optionsEl.appendChild(button);
-      });
-    }
-
-    function checkAnswer(selected) {
-      const correctAnswer = questions[currentQuestion].capital;
-      const buttons = optionsEl.querySelectorAll(".option");
-      buttons.forEach(button => {
-        if (button.textContent === correctAnswer) {
-          button.classList.add("correct");
-        } else {
-          button.classList.add("incorrect");
+      { country: "Luxembourg", capital: "Ville de Luxembourg" },
+      { country: "Albanie", capital: "Tirana" },
+      { country: "Andorre", capital: "Andorre-la-Vieille" },
+      { country: "Arménie", capital: "Erevan" },
+      { country: "Azerbaïdjan", capital: "Bakou" },
+      { country: "Biélorussie", capital: "Minsk" },
+      { country: "Bosnie-Herzégovine", capital: "Sarajevo" },
+      { country: "Bulgarie", capital: "Sofia" },
+      { country: "Chypre", capital: "Nicosie" },
+      { country: "Croatie", capital: "Zagreb" },
+      { country: "Estonie", capital: "Tallinn" },
+      { country: "Géorgie", capital: "Tbilissi" },
+      { country: "Kosovo", capital: "Pristina" },
+      { country: "Lettonie", capital: "Riga" },
+      { country: "Liechtenstein", capital: "Vaduz" },
+      { country: "Lituanie", capital: "Vilnius" },
+      { country: "Malte", capital: "La Valette" },
+      { country: "Moldavie", capital: "Chișinău" },
+      { country: "Monténégro", capital: "Podgorica" },
+      { country: "Macédoine du Nord", capital: "Skopje" },
+      { country: "Roumanie", capital: "Bucarest" },
+      { country: "Russie", capital: "Moscou" },
+      { country: "Saint-Marin", capital: "Saint-Marin" },
+      { country: "Serbie", capital: "Belgrade" },
+      { country: "Slovaquie", capital: "Bratislava" },
+      { country: "Slovénie", capital: "Ljubljana" },
+      { country: "Ukraine", capital: "Kiev" },
+      { country: "Vatican", capital: "Vatican" }
+      ];
+  
+      let currentQuestion = 0;
+      let score = 0;
+  
+      const questionEl = document.getElementById("question");
+      const optionsEl = document.getElementById("options");
+      const scoreEl = document.getElementById("score");
+      const restartBtn = document.getElementById("restart");
+  
+      function loadQuestion() {
+        const question = questions[currentQuestion];
+        questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+  
+        optionsEl.innerHTML = "";
+        const options = questions.map(q => q.capital);
+  
+        // Ensure the correct answer is included
+        const shuffledOptions = new Set([question.capital]);
+        while (shuffledOptions.size < 4) {
+          const randomOption = options[Math.floor(Math.random() * options.length)];
+          shuffledOptions.add(randomOption);
         }
-        button.disabled = true;
-      });
-
-      if (selected === correctAnswer) {
-        score++;
+  
+        Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
+          const button = document.createElement("button");
+          button.textContent = option;
+          button.classList.add("option");
+          button.addEventListener("click", () => checkAnswer(option));
+          optionsEl.appendChild(button);
+        });
       }
-
-      setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-          loadQuestion();
-        } else {
-          showScore();
+  
+      function checkAnswer(selected) {
+        const correctAnswer = questions[currentQuestion].capital;
+        const buttons = optionsEl.querySelectorAll(".option");
+        buttons.forEach(button => {
+          if (button.textContent === correctAnswer) {
+            button.classList.add("correct");
+          } else {
+            button.classList.add("incorrect");
+          }
+          button.disabled = true;
+        });
+  
+        if (selected === correctAnswer) {
+          score++;
         }
-      }, 1000);
-    }
-
-    function showScore() {
-      questionEl.style.display = "none";
-      optionsEl.style.display = "none";
-      scoreEl.style.display = "block";
-      restartBtn.style.display = "block";
-      scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
-    }
-
-    restartBtn.addEventListener("click", () => {
-      currentQuestion = 0;
-      score = 0;
-      questionEl.style.display = "block";
-      optionsEl.style.display = "grid";
-      scoreEl.style.display = "none";
-      restartBtn.style.display = "none";
+  
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            loadQuestion();
+          } else {
+            showScore();
+          }
+        }, 1000);
+      }
+  
+      function showScore() {
+        questionEl.style.display = "none";
+        optionsEl.style.display = "none";
+        scoreEl.style.display = "block";
+        restartBtn.style.display = "block";
+        scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
+      }
+  
+      restartBtn.addEventListener("click", () => {
+        currentQuestion = 0;
+        score = 0;
+        questionEl.style.display = "block";
+        optionsEl.style.display = "grid";
+        scoreEl.style.display = "none";
+        restartBtn.style.display = "none";
+        loadQuestion();
+      });
+  
       loadQuestion();
-    });
-
-    loadQuestion();
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
