@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Capitales d'Europe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #444;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: grid;
+      gap: 10px;
+    }
+    .option {
+      padding: 10px;
+      background: #e4e4e4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .option:hover {
+      background: #d4d4d4;
+    }
+    .correct {
+      background: #8fbc8f !important;
+    }
+    .incorrect {
+      background: #f08080 !important;
+    }
+    .score {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    .restart {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .restart:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz - Capitales d'Europe</h1>
+  <div class="quiz-container">
+    <div id="quiz">
+      <p class="question" id="question">Chargement de la question...</p>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="score" id="score" style="display: none;">Votre score : 0</div>
+    <button class="restart" id="restart" style="display: none;">Recommencer le quiz</button>
+  </div>
+
+  <script>
+    const questions = [
+      { country: "France", capital: "Paris" },
+      { country: "Allemagne", capital: "Berlin" },
+      { country: "Italie", capital: "Rome" },
+      { country: "Espagne", capital: "Madrid" },
+      { country: "Portugal", capital: "Lisbonne" },
+      { country: "Pays-Bas", capital: "Amsterdam" },
+      { country: "Belgique", capital: "Bruxelles" },
+      { country: "Autriche", capital: "Vienne" },
+      { country: "Suède", capital: "Stockholm" },
+      { country: "Norvège", capital: "Oslo" },
+      { country: "Finlande", capital: "Helsinki" },
+      { country: "Danemark", capital: "Copenhague" },
+      { country: "Suisse", capital: "Berne" },
+      { country: "Pologne", capital: "Varsovie" },
+      { country: "Grèce", capital: "Athènes" },
+      { country: "République tchèque", capital: "Prague" },
+      { country: "Hongrie", capital: "Budapest" },
+      { country: "Irlande", capital: "Dublin" },
+      { country: "Islande", capital: "Reykjavik" },
+      { country: "Luxembourg", capital: "Ville de Luxembourg" }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart");
+
+    function loadQuestion() {
+      const question = questions[currentQuestion];
+      questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+
+      optionsEl.innerHTML = "";
+      const options = questions.map(q => q.capital);
+
+      // Ensure the correct answer is included
+      const shuffledOptions = new Set([question.capital]);
+      while (shuffledOptions.size < 4) {
+        const randomOption = options[Math.floor(Math.random() * options.length)];
+        shuffledOptions.add(randomOption);
+      }
+
+      Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const correctAnswer = questions[currentQuestion].capital;
+      const buttons = optionsEl.querySelectorAll(".option");
+      buttons.forEach(button => {
+        if (button.textContent === correctAnswer) {
+          button.classList.add("correct");
+        } else {
+          button.classList.add("incorrect");
+        }
+        button.disabled = true;
+      });
+
+      if (selected === correctAnswer) {
+        score++;
+      }
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          showScore();
+        }
+      }, 1000);
+    }
+
+    function showScore() {
+      questionEl.style.display = "none";
+      optionsEl.style.display = "none";
+      scoreEl.style.display = "block";
+      restartBtn.style.display = "block";
+      scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      questionEl.style.display = "block";
+      optionsEl.style.display = "grid";
+      scoreEl.style.display = "none";
+      restartBtn.style.display = "none";
+      loadQuestion();
+    });
+
+    loadQuestion();
+  </script>
+</body>
+</html>
