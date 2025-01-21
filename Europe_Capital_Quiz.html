@@ -131,15 +131,16 @@
   
       let currentQuestion = 0;
       let score = 0;
-  
       const questionEl = document.getElementById("question");
       const optionsEl = document.getElementById("options");
       const scoreEl = document.getElementById("score");
       const restartBtn = document.getElementById("restart");
+      const countryCounterEl = document.getElementById("country-counter"); // Ajoutez cette ligne
   
       function loadQuestion() {
         const question = questions[currentQuestion];
         questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+        countryCounterEl.textContent = `Pays ${currentQuestion + 1}/${questions.length}`; // Mettez à jour le compteur
   
         optionsEl.innerHTML = "";
         const options = questions.map(q => q.capital);
