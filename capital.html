@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+        .options {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            display: none;
+        }
+        .progress {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #nextBtn {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz des capitales d'Amérique du Nord et Centrale</h1>
+        <div class="progress">Question <span id="currentQuestion">1</span>/23</div>
+        <div id="quiz">
+            <div class="question active" id="q1">
+                <h3>1. Quelle est la capitale d'Antigua-et-Barbuda ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Saint John's</button>
+                    <button onclick="checkAnswer(this)">Georgetown</button>
+                    <button onclick="checkAnswer(this)">Bridgetown</button>
+                </div>
+            </div>
+
+            <div class="question" id="q2">
+                <h3>2. Quelle est la capitale des Bahamas ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Nassau</button>
+                    <button onclick="checkAnswer(this)">Freeport</button>
+                    <button onclick="checkAnswer(this)">Kingston</button>
+                </div>
+            </div>
+
+            <div class="question" id="q3">
+                <h3>3. Quelle est la capitale de la Barbade ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Bridgetown</button>
+                    <button onclick="checkAnswer(this)">Speightstown</button>
+                    <button onclick="checkAnswer(this)">Oistins</button>
+                </div>
+            </div>
+
+            <div class="question" id="q4">
+                <h3>4. Quelle est la capitale du Belize ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Belmopan</button>
+                    <button onclick="checkAnswer(this)">Belize City</button>
+                    <button onclick="checkAnswer(this)">San Ignacio</button>
+                </div>
+            </div>
+
+            <div class="question" id="q5">
+                <h3>5. Quelle est la capitale du Canada ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)">Toronto</button>
+                    <button onclick="checkAnswer(this)" data-correct="true">Ottawa</button>
+                    <button onclick="checkAnswer(this)">Vancouver</button>
+                </div>
+            </div>
+
+            <div class="question" id="q6">
+                <h3>6. Quelle est la capitale du Costa Rica ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">San José</button>
+                    <button onclick="checkAnswer(this)">Liberia</button>
+                    <button onclick="checkAnswer(this)">Alajuela</button>
+                </div>
+            </div>
+
+            <div class="question" id="q7">
+                <h3>7. Quelle est la capitale de Cuba ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">La Havane</button>
+                    <button onclick="checkAnswer(this)">Santiago de Cuba</button>
+                    <button onclick="checkAnswer(this)">Camagüey</button>
+                </div>
+            </div>
+
+            <div class="question" id="q8">
+                <h3>8. Quelle est la capitale de la Dominique ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Roseau</button>
+                    <button onclick="checkAnswer(this)">Portsmouth</button>
+                    <button onclick="checkAnswer(this)">Marigot</button>
+                </div>
+            </div>
+
+            <div class="question" id="q9">
+                <h3>9. Quelle est la capitale des États-Unis ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Washington, D.C.</button>
+                    <button onclick="checkAnswer(this)">New York</button>
+                    <button onclick="checkAnswer(this)">Los Angeles</button>
+                </div>
+            </div>
+
+            <div class="question" id="q10">
+                <h3>10. Quelle est la capitale de la Grenade ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Saint-Georges</button>
+                    <button onclick="checkAnswer(this)">Grenville</button>
+                    <button onclick="checkAnswer(this)">Gouyave</button>
+                </div>
+            </div>
+
+            <div class="question" id="q11">
+                <h3>11. Quelle est la capitale du Guatemala ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Guatemala</button>
+                    <button onclick="checkAnswer(this)">Quetzaltenango</button>
+                    <button onclick="checkAnswer(this)">Antigua</button>
+                </div>
+            </div>
+
+            <div class="question" id="q12">
+                <h3>12. Quelle est la capitale d'Haïti ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Port-au-Prince</button>
+                    <button onclick="checkAnswer(this)">Cap-Haïtien</button>
+                    <button onclick="checkAnswer(this)">Léogâne</button>
+                </div>
+            </div>
+
+            <div class="question" id="q13">
+                <h3>13. Quelle est la capitale du Honduras ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Tegucigalpa</button>
+                    <button onclick="checkAnswer(this)">San Pedro Sula</button>
+                    <button onclick="checkAnswer(this)">La Ceiba</button>
+                </div>
+            </div>
+
+            <div class="question" id="q14">
+                <h3>14. Quelle est la capitale de la Jamaïque ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Kingston</button>
+                    <button onclick="checkAnswer(this)">Montego Bay</button>
+                    <button onclick="checkAnswer(this)">Spanish Town</button>
+                </div>
+            </div>
+
+            <div class="question" id="q15">
+                <h3>15. Quelle est la capitale du Mexique ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Mexico</button>
+                    <button onclick="checkAnswer(this)">Guadalajara</button>
+                    <button onclick="checkAnswer(this)">Monterrey</button>
+                </div>
+            </div>
+
+            <div class="question" id="q16">
+                <h3>16. Quelle est la capitale du Nicaragua ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Managua</button>
+                    <button onclick="checkAnswer(this)">León</button>
+                    <button onclick="checkAnswer(this)">Granada</button>
+                </div>
+            </div>
+
+            <div class="question" id="q17">
+                <h3>17. Quelle est la capitale du Panama ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Panama</button>
+                    <button onclick="checkAnswer(this)">Colón</button>
+                    <button onclick="checkAnswer(this)">David</button>
+                </div>
+            </div>
+
+            <div class="question" id="q18">
+                <h3>18. Quelle est la capitale de la République Dominicaine ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Saint-Domingue</button>
+                    <button onclick="checkAnswer(this)">Santiago</button>
+                    <button onclick="checkAnswer(this)">Puerto Plata</button>
+                </div>
+            </div>
+
+            <div class="question" id="q19">
+                <h3>19. Quelle est la capitale de Saint-Kitts-et-Nevis ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Basseterre</button>
+                    <button onclick="checkAnswer(this)">Charlestown</button>
+                    <button onclick="checkAnswer(this)">Sandy Point</button>
+                </div>
+            </div>
+
+            <div class="question" id="q20">
+                <h3>20. Quelle est la capitale de Sainte-Lucie ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Castries</button>
+                    <button onclick="checkAnswer(this)">Vieux Fort</button>
+                    <button onclick="checkAnswer(this)">Soufrière</button>
+                </div>
+            </div>
+
+            <div class="question" id="q21">
+                <h3>21. Quelle est la capitale de Saint-Vincent-et-les Grenadines ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Kingstown</button>
+                    <button onclick="checkAnswer(this)">Georgetown</button>
+                    <button onclick="checkAnswer(this)">Port Elizabeth</button>
+                </div>
+            </div>
+
+            <div class="question" id="q22">
+                <h3>22. Quelle est la capitale du Salvador ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">San Salvador</button>
+                    <button onclick="checkAnswer(this)">Santa Ana</button>
+                    <button onclick="checkAnswer(this)">San Miguel</button>
+                </div>
+            </div>
+
+            <div class="question" id="q23">
+                <h3>23. Quelle est la capitale de Trinité-et-Tobago ?</h3>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="true">Port-d'Espagne</button>
+                    <button onclick="checkAnswer(this)">San Fernando</button>
+                    <button onclick="checkAnswer(this)">Scarborough</button>
+                </div>
+            </div>
+        </div>
+        <button id="nextBtn" onclick="nextQuestion()">Question suivante</button>
+        <div class="result" id="result">
+            Score final: <span id="score">0</span>/23
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        let currentQuestion = 1;
+        const totalQuestions = 23;
+
+        function checkAnswer(button) {
+            const allButtons = button.parentElement.getElementsByTagName('button');
+            for (let btn of allButtons) {
+                btn.disabled = true;
+                if (btn.getAttribute('data-correct') === 'true') {
+                    btn.style.backgroundColor = '#4CAF50';
+                } else {
+                    btn.style.backgroundColor = '#f44336';
+                }
+            }
+            
+            if (button.getAttribute('data-correct') === 'true') {
+                score++;
+            }
+
+            document.getElementById('nextBtn').style.display = 'block';
+            
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('nextBtn').textContent = 'Voir le résultat';
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('score').textContent = score;
+                document.getElementById('nextBtn').style.display = 'none';
+                return;
+            }
+
+            document.querySelector('.question.active').classList.remove('active');
+            currentQuestion++;
+            document.getElementById('q' + currentQuestion).classList.add('active');
+            document.getElementById('currentQuestion').textContent = currentQuestion;
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
