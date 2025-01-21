@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Capitales d'Afrique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Quiz - Capitales d'Afrique</h1>
+  </header>
+  <div class="quiz-container">
+    <div id="quiz">
+      <p class="question" id="question">Chargement de la question...</p>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="score" id="score" style="display: none;">Votre score : 0</div>
+    <div id="country-counter">Pays 1/54</div>
+    <button class="btn restart" id="restart" style="display: none;">Recommencer le quiz</button>
+  </div>
+
+  <script>
+    const questions = [
+      { country: "Afrique du Sud", capital: "Pretoria" },
+      { country: "Algérie", capital: "Alger" },
+      { country: "Angola", capital: "Luanda" },
+      { country: "Bénin", capital: "Porto-Novo" },
+      { country: "Botswana", capital: "Gaborone" },
+      { country: "Burkina Faso", capital: "Ouagadougou" },
+      { country: "Burundi", capital: "Bujumbura" },
+      { country: "Cameroun", capital: "Yaoundé" },
+      { country: "Cap-Vert", capital: "Praia" },
+      { country: "République centrafricaine", capital: "Bangui" },
+      { country: "Comores", capital: "Moroni" },
+      { country: "Congo", capital: "Brazzaville" },
+      { country: "République démocratique du Congo", capital: "Kinshasa" },
+      { country: "Côte d'Ivoire", capital: "Yamoussoukro" },
+      { country: "Djibouti", capital: "Djibouti" },
+      { country: "Égypte", capital: "Le Caire" },
+      { country: "Guinée équatoriale", capital: "Malabo" },
+      { country: "Érythrée", capital: "Asmara" },
+      { country: "Eswatini", capital: "Mbabane" },
+      { country: "Éthiopie", capital: "Addis-Abeba" },
+      { country: "Gabon", capital: "Libreville" },
+      { country: "Gambie", capital: "Banjul" },
+      { country: "Ghana", capital: "Accra" },
+      { country: "Guinée", capital: "Conakry" },
+      { country: "Guinée-Bissau", capital: "Bissau" },
+      { country: "Kenya", capital: "Nairobi" },
+      { country: "Lesotho", capital: "Maseru" },
+      { country: "Liberia", capital: "Monrovia" },
+      { country: "Libye", capital: "Tripoli" },
+      { country: "Madagascar", capital: "Antananarivo" },
+      { country: "Malawi", capital: "Lilongwe" },
+      { country: "Mali", capital: "Bamako" },
+      { country: "Mauritanie", capital: "Nouakchott" },
+      { country: "Maurice", capital: "Port-Louis" },
+      { country: "Maroc", capital: "Rabat" },
+      { country: "Mozambique", capital: "Maputo" },
+      { country: "Namibie", capital: "Windhoek" },
+      { country: "Niger", capital: "Niamey" },
+      { country: "Nigeria", capital: "Abuja" },
+      { country: "Rwanda", capital: "Kigali" },
+      { country: "Sao Tomé-et-Principe", capital: "São Tomé" },
+      { country: "Sénégal", capital: "Dakar" },
+      { country: "Seychelles", capital: "Victoria" },
+      { country: "Sierra Leone", capital: "Freetown" },
+      { country: "Somalie", capital: "Mogadiscio" },
+      { country: "Soudan", capital: "Khartoum" },
+      { country: "Soudan du Sud", capital: "Djouba" },
+      { country: "Tanzanie", capital: "Dodoma" },
+      { country: "Togo", capital: "Lomé" },
+      { country: "Tunisie", capital: "Tunis" },
+      { country: "Ouganda", capital: "Kampala" },
+      { country: "Zambie", capital: "Lusaka" },
+      { country: "Zimbabwe", capital: "Harare" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart");
+    const countryCounterEl = document.getElementById("country-counter");
+
+    function loadQuestion() {
+      const question = questions[currentQuestion];
+      questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+      countryCounterEl.textContent = `Pays ${currentQuestion + 1}/${questions.length}`;
+
+      optionsEl.innerHTML = "";
+      const options = questions.map(q => q.capital);
+      
+      const shuffledOptions = new Set([question.capital]);
+      while (shuffledOptions.size < 4) {
+        const randomOption = options[Math.floor(Math.random() * options.length)];
+        shuffledOptions.add(randomOption);
+      }
+
+      Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const correctAnswer = questions[currentQuestion].capital;
+      const buttons = optionsEl.querySelectorAll(".option");
+      buttons.forEach(button => {
+        if (button.textContent === correctAnswer) {
+          button.classList.add("correct");
+        } else {
+          button.classList.add("incorrect");
+        }
+        button.disabled = true;
+      });
+
+      if (selected === correctAnswer) {
+        score++;
+      }
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          showScore();
+        }
+      }, 1000);
+    }
+
+    function showScore() {
+      questionEl.style.display = "none";
+      optionsEl.style.display = "none";
+      scoreEl.style.display = "block";
+      restartBtn.style.display = "block";
+      scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      shuffle(questions);
+      currentQuestion = 0;
+      score = 0;
+      questionEl.style.display = "block";
+      optionsEl.style.display = "grid";
+      scoreEl.style.display = "none";
+      restartBtn.style.display = "none";
+      loadQuestion();
+    });
+
+    loadQuestion();
+  </script>
+</body>
+</html>
