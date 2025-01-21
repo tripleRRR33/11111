@@ -1,156 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --hover-color: #bb86fc;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background: radial-gradient(circle at center, #1d1f20, #131314);
-    overflow-x: hidden;
-    font-size: 16px;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 header {
-    background: #1d1f20;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
 }
 
 header h1 {
-    color: #ff0099;
-    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 40px #ff0099;
+    margin: 0;
+    color: var(--secondary-color);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(29, 31, 32, 0.95);
+    max-width: 800px;
+    margin: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    transform: scale(1);
-    transition: transform 0.3s ease-in-out, background 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background 0.3s;
 }
 
 .container:hover {
     transform: scale(1.05);
-    background: rgba(29, 31, 32, 1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .quiz-card {
-    background: rgba(29, 31, 32, 0.9);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .quiz-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
 }
 
 .question {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: #ff0099;
-    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .option {
     display: block;
     padding: 15px;
     margin: 10px 0;
-    border: 2px solid #ff0099;
-    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-size: 1rem;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #fff;
-    background: #1d1f20;
-    box-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
+    color: var(--text-color);
+    background: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .option:hover {
-    background: #ff0099;
-    color: #1d1f20;
-    transform: translateX(8px);
+    background: var(--hover-color);
+    transform: translateX(10px);
 }
 
 .option.selected {
-    background: #00ff99;
-    color: #1d1f20;
-    border-color: #00ff99;
+    background: var(--secondary-color);
+    color: var(--background-color);
+    border-color: var(--secondary-color);
 }
 
 .option.correct {
-    background: #66bb6a;
+    background: #4caf50;
     color: white;
-    border-color: #66bb6a;
+    border-color: #4caf50;
 }
 
 .option.wrong {
-    background: #ef5350;
+    background: #f44336;
     color: white;
-    border-color: #ef5350;
+    border-color: #f44336;
 }
 
 .timer, .score, #result h2 {
     text-align: center;
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #ff0099;
+    font-size: 1.75rem;
+    margin: 20px 0;
+    color: var(--secondary-color);
     font-weight: bold;
-    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .anecdote {
     display: none;
-    background: #1d1f20;
+    background: var(--primary-color);
     padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
     font-style: italic;
     font-size: 1.25rem;
-    color: #fff;
-    box-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
+    color: var(--text-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
     display: block;
     width: 100%;
     padding: 15px;
-    background: #ff0099;
-    color: white;
+    background: var(--secondary-color);
+    color: var(--background-color);
     border: none;
-    border-radius: 8px;
-    font-size: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.75rem;
     cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
-    background: #00ff99;
-    color: #1d1f20;
-    transform: scale(1.05);
-    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99;
+    background: var(--hover-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 #result {
     display: none;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
