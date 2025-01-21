@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Capitales d'Asie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Quiz - Capitales d'Asie</h1>
+  </header>
+  <div class="quiz-container">
+    <div id="quiz">
+      <p class="question" id="question">Chargement de la question...</p>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="score" id="score" style="display: none;">Votre score : 0</div>
+    <div id="country-counter">Pays 1/49</div>
+    <button class="btn restart" id="restart" style="display: none;">Recommencer le quiz</button>
+  </div>
+
+  <script>
+    const questions = [
+      { country: "Afghanistan", capital: "Kaboul" },
+      { country: "Arabie Saoudite", capital: "Riyad" },
+      { country: "Arménie", capital: "Erevan" },
+      { country: "Azerbaïdjan", capital: "Bakou" },
+      { country: "Bahreïn", capital: "Manama" },
+      { country: "Bangladesh", capital: "Dacca" },
+      { country: "Bhoutan", capital: "Thimphou" },
+      { country: "Birmanie", capital: "Naypyidaw" },
+      { country: "Brunei", capital: "Bandar Seri Begawan" },
+      { country: "Cambodge", capital: "Phnom Penh" },
+      { country: "Chine", capital: "Pékin" },
+      { country: "Chypre", capital: "Nicosie" },
+      { country: "Corée du Nord", capital: "Pyongyang" },
+      { country: "Corée du Sud", capital: "Séoul" },
+      { country: "Émirats arabes unis", capital: "Abou Dabi" },
+      { country: "Géorgie", capital: "Tbilissi" },
+      { country: "Inde", capital: "New Delhi" },
+      { country: "Indonésie", capital: "Jakarta" },
+      { country: "Iran", capital: "Téhéran" },
+      { country: "Irak", capital: "Bagdad" },
+      { country: "Israël", capital: "Jérusalem" },
+      { country: "Japon", capital: "Tokyo" },
+      { country: "Jordanie", capital: "Amman" },
+      { country: "Kazakhstan", capital: "Noursoultan" },
+      { country: "Kirghizistan", capital: "Bichkek" },
+      { country: "Koweït", capital: "Koweït" },
+      { country: "Laos", capital: "Vientiane" },
+      { country: "Liban", capital: "Beyrouth" },
+      { country: "Malaisie", capital: "Kuala Lumpur" },
+      { country: "Maldives", capital: "Malé" },
+      { country: "Mongolie", capital: "Oulan-Bator" },
+      { country: "Népal", capital: "Katmandou" },
+      { country: "Oman", capital: "Mascate" },
+      { country: "Ouzbékistan", capital: "Tachkent" },
+      { country: "Pakistan", capital: "Islamabad" },
+      { country: "Philippines", capital: "Manille" },
+      { country: "Qatar", capital: "Doha" },
+      { country: "Singapour", capital: "Singapour" },
+      { country: "Sri Lanka", capital: "Sri Jayawardenepura" },
+      { country: "Syrie", capital: "Damas" },
+      { country: "Tadjikistan", capital: "Douchanbé" },
+      { country: "Taïwan", capital: "Taipei" },
+      { country: "Thaïlande", capital: "Bangkok" },
+      { country: "Timor oriental", capital: "Dili" },
+      { country: "Turkménistan", capital: "Achgabat" },
+      { country: "Turquie", capital: "Ankara" },
+      { country: "Viêt Nam", capital: "Hanoï" },
+      { country: "Yémen", capital: "Sanaa" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart");
+    const countryCounterEl = document.getElementById("country-counter");
+
+    function loadQuestion() {
+      const question = questions[currentQuestion];
+      questionEl.textContent = `Quelle est la capitale de ${question.country} ?`;
+      countryCounterEl.textContent = `Pays ${currentQuestion + 1}/${questions.length}`;
+
+      optionsEl.innerHTML = "";
+      const options = questions.map(q => q.capital);
+      
+      const shuffledOptions = new Set([question.capital]);
+      while (shuffledOptions.size < 4) {
+        const randomOption = options[Math.floor(Math.random() * options.length)];
+        shuffledOptions.add(randomOption);
+      }
+
+      Array.from(shuffledOptions).sort(() => Math.random() - 0.5).forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const correctAnswer = questions[currentQuestion].capital;
+      const buttons = optionsEl.querySelectorAll(".option");
+      buttons.forEach(button => {
+        if (button.textContent === correctAnswer) {
+          button.classList.add("correct");
+        } else {
+          button.classList.add("incorrect");
+        }
+        button.disabled = true;
+      });
+
+      if (selected === correctAnswer) {
+        score++;
+      }
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          showScore();
+        }
+      }, 1000);
+    }
+
+    function showScore() {
+      questionEl.style.display = "none";
+      optionsEl.style.display = "none";
+      scoreEl.style.display = "block";
+      restartBtn.style.display = "block";
+      scoreEl.textContent = `Votre score : ${score} / ${questions.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      shuffle(questions);
+      currentQuestion = 0;
+      score = 0;
+      questionEl.style.display = "block";
+      optionsEl.style.display = "grid";
+      scoreEl.style.display = "none";
+      restartBtn.style.display = "none";
+      loadQuestion();
+    });
+
+    loadQuestion();
+  </script>
+</body>
+</html>
