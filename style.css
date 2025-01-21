@@ -37,8 +37,8 @@ header h1 {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container {
-    max-width: 800px;
+.quiz-container {
+    max-width: 700px;
     margin: 20px;
     padding: 30px;
     background: rgba(255, 255, 255, 0.1);
@@ -47,7 +47,7 @@ header h1 {
     transition: transform 0.3s, background 0.3s;
 }
 
-.container:hover {
+.quiz-container:hover {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.2);
 }
